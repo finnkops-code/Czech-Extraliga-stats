@@ -43,10 +43,20 @@ def fetch(url: str, params: dict = None) -> dict | None:
 
 
 def clean_players(data: list) -> list:
+    """
+    Maak namen leesbaar en normaliseer veldnamen zodat de shortcode
+    dezelfde kolomnamen verwacht als de DBL shortcode:
+    name → Player, team → Teamname
+    """
     out = []
     for row in data:
         row = dict(row)
+        # Naam opschonen
         row["name"] = clean_name(row.get("name", ""))
+        # Normaliseer naar Player / Teamname zodat de shortcode werkt
+        row["Player"]   = row.get("name", "")
+        row["Teamname"] = row.get("team", "")
+        # Spelerlink
         link = row.get("link", "")
         m = re.search(r"/players/(\d+)$", link)
         row["player_id"] = m.group(1) if m else None
@@ -58,6 +68,11 @@ def annotate_headers(headers: list) -> list:
     for h in headers:
         if h.get("format"):
             h["format_type"] = "baseball_pct"
+        # Normaliseer ook de column-naam in de headers
+        if h.get("column") == "name":
+            h["column"] = "Player"
+        if h.get("column") == "team":
+            h["column"] = "Teamname"
     return headers
 
 
@@ -71,7 +86,7 @@ def scrape_section(section: str) -> dict | None:
     if not result:
         return None
     return {
-        "data": clean_players(result.get("data", [])),
+        "data":    clean_players(result.get("data", [])),
         "headers": annotate_headers(result.get("headers", [])),
     }
 
@@ -90,8 +105,19 @@ def main():
             print(f"    ⚠ Geen data")
         time.sleep(0.5)
 
+    # Meta
+    meta = {
+        "last_updated": datetime.now(timezone.utc).isoformat(),
+        "source": BASE,
+        "season": "Czech Baseball Extraliga 2026",
+        "player_counts": {s: len(v["data"]) for s, v in all_stats.items()},
+    }
+
+    os.makedirs(DATA, exist_ok=True)
     with open(f"{DATA}/stats.json", "w", encoding="utf-8") as f:
         json.dump(all_stats, f, ensure_ascii=False, indent=2)
+    with open(f"{DATA}/meta.json", "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
 
     total = sum(len(v["data"]) for v in all_stats.values())
     print(f"\n✅ stats.json geschreven ({total} totaal rijen)\n")
