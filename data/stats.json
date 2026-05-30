@@ -6404,7 +6404,7 @@
       {
         "pitch_win": 4,
         "pitch_loss": 2,
-        "era": "1.89",
+        "era": "1.70",
         "pitch_appear": 9,
         "pitch_gs": 7,
         "pitch_save": 0,
@@ -6413,7 +6413,7 @@
         "pitch_ip": "47.2",
         "pitch_h": 32,
         "pitch_r": 11,
-        "pitch_er": 10,
+        "pitch_er": 9,
         "pitch_bb": 10,
         "pitch_so": 68,
         "pitch_double": 7,
