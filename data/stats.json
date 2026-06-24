@@ -6840,12 +6840,12 @@
         "player_id": "735357"
       },
       {
-        "pitch_win": 3,
+        "pitch_win": 4,
         "pitch_loss": 1,
         "era": "3.74",
         "pitch_appear": 9,
         "pitch_gs": 6,
-        "pitch_save": 1,
+        "pitch_save": 0,
         "pitch_cg": 0,
         "pitch_sho": 0,
         "pitch_ip": "45.2",
@@ -7632,7 +7632,7 @@
         "player_id": "765842"
       },
       {
-        "pitch_win": 1,
+        "pitch_win": 0,
         "pitch_loss": 1,
         "era": "2.16",
         "pitch_appear": 6,
