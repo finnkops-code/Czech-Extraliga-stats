@@ -1,9 +1,10 @@
 {
-  "last_updated": "2026-06-26T14:14:35.015535+00:00",
+  "last_updated": "2026-06-26T19:41:39.958349+00:00",
   "source": "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026",
   "season": "Czech Baseball Extraliga 2026",
   "player_counts": {
     "batting": 156,
+    "pitching": 90,
     "fielding": 201
   }
 }
