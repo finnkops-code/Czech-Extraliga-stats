@@ -1,32 +1,36 @@
-name: Scrape Extraliga Stats
+name: Czech Extraliga Schedule Scraper
 
 on:
   schedule:
-    - cron: '0 6,12,18,23 * * *'   # 4× per dag
-  workflow_dispatch:                  # handmatig starten
+    - cron: '0 * * * *'
+    - cron: '30 11 * * 5'   # vrijdag 13:30 NL
+    - cron: '30 11 * * 6'   # zaterdag 13:30 NL
+    - cron: '30 17 * * 6'   # zaterdag 19:30 NL
+    - cron: '30 11 * * 0'   # zondag 13:30 NL
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Python instellen
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install requests
+      - name: Schedule scrapen
+        run: python scraper_schedule.py
 
-      - name: Run scraper
-        run: python extraliga-scraper.py
-
-      - name: Commit & push
+      - name: JSON committen
         run: |
-          git config user.name "github-actions[bot]"
+          git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          git diff --staged --quiet || git commit -m "📊 Extraliga stats update $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git add schedule_extraliga.json
+          git diff --staged --quiet || git commit -m "Extraliga schedule bijgewerkt: $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
