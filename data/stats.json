@@ -28,8 +28,6 @@
         "name": "ALVAREZ Roberto",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "ALVAREZ Roberto",
-        "Teamname": "",
         "player_id": "737072"
       },
       {
@@ -59,8 +57,6 @@
         "name": "ANTOŇ Michal",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ANTOŇ Michal",
-        "Teamname": "",
         "player_id": "738582"
       },
       {
@@ -90,8 +86,6 @@
         "name": "BARTOŇ David",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "BARTOŇ David",
-        "Teamname": "",
         "player_id": "735297"
       },
       {
@@ -121,8 +115,6 @@
         "name": "BILÍČEK Jan",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "BILÍČEK Jan",
-        "Teamname": "",
         "player_id": "732936"
       },
       {
@@ -152,8 +144,6 @@
         "name": "BLAŽEK šimon",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "BLAŽEK šimon",
-        "Teamname": "",
         "player_id": "735317"
       },
       {
@@ -183,8 +173,6 @@
         "name": "BOUCK Parks",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "BOUCK Parks",
-        "Teamname": "",
         "player_id": "735931"
       },
       {
@@ -214,8 +202,6 @@
         "name": "BRACAMONTE Gabriel",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "BRACAMONTE Gabriel",
-        "Teamname": "",
         "player_id": "735365"
       },
       {
@@ -245,8 +231,6 @@
         "name": "BRACEY Markus",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "BRACEY Markus",
-        "Teamname": "",
         "player_id": "737073"
       },
       {
@@ -276,8 +260,6 @@
         "name": "BROWN Jakub",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "BROWN Jakub",
-        "Teamname": "",
         "player_id": "735682"
       },
       {
@@ -307,8 +289,6 @@
         "name": "BUBENÍK Matouš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "BUBENÍK Matouš",
-        "Teamname": "",
         "player_id": "739240"
       },
       {
@@ -338,8 +318,6 @@
         "name": "BÍLEK David",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "BÍLEK David",
-        "Teamname": "",
         "player_id": "732928"
       },
       {
@@ -369,8 +347,6 @@
         "name": "BŘEČKA Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "BŘEČKA Jakub",
-        "Teamname": "",
         "player_id": "735894"
       },
       {
@@ -400,8 +376,6 @@
         "name": "CHLUP Marek",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "CHLUP Marek",
-        "Teamname": "",
         "player_id": "774747"
       },
       {
@@ -431,8 +405,6 @@
         "name": "CHROMÝ Lukáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "CHROMÝ Lukáš",
-        "Teamname": "",
         "player_id": "732955"
       },
       {
@@ -462,8 +434,6 @@
         "name": "COLINA Jose",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "COLINA Jose",
-        "Teamname": "",
         "player_id": "757326"
       },
       {
@@ -493,8 +463,6 @@
         "name": "DAVILA Vladimir",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "DAVILA Vladimir",
-        "Teamname": "",
         "player_id": "763391"
       },
       {
@@ -524,8 +492,6 @@
         "name": "DERGANZ Lukáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "DERGANZ Lukáš",
-        "Teamname": "",
         "player_id": "739233"
       },
       {
@@ -555,8 +521,6 @@
         "name": "DOHNAL Ladislav",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "DOHNAL Ladislav",
-        "Teamname": "",
         "player_id": "732937"
       },
       {
@@ -586,8 +550,6 @@
         "name": "DRÁPELA šimon",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "DRÁPELA šimon",
-        "Teamname": "",
         "player_id": "735320"
       },
       {
@@ -617,8 +579,6 @@
         "name": "DUBOVÝ Arnošt",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "DUBOVÝ Arnošt",
-        "Teamname": "",
         "player_id": "735295"
       },
       {
@@ -648,8 +608,6 @@
         "name": "DVOŘÁK Matěj",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "DVOŘÁK Matěj",
-        "Teamname": "",
         "player_id": "732949"
       },
       {
@@ -679,8 +637,6 @@
         "name": "FANCHER Dominik",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "FANCHER Dominik",
-        "Teamname": "",
         "player_id": "735325"
       },
       {
@@ -710,8 +666,6 @@
         "name": "FEJT Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "FEJT Jan",
-        "Teamname": "",
         "player_id": "735685"
       },
       {
@@ -741,8 +695,6 @@
         "name": "FIALA David",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "FIALA David",
-        "Teamname": "",
         "player_id": "732902"
       },
       {
@@ -772,8 +724,6 @@
         "name": "GALASKA Ryker",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "GALASKA Ryker",
-        "Teamname": "",
         "player_id": "769385"
       },
       {
@@ -803,8 +753,6 @@
         "name": "GALINDO Cristian",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "GALINDO Cristian",
-        "Teamname": "",
         "player_id": "735355"
       },
       {
@@ -834,8 +782,6 @@
         "name": "GIECI Martin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "GIECI Martin",
-        "Teamname": "",
         "player_id": "735327"
       },
       {
@@ -865,8 +811,6 @@
         "name": "GOTTSCHALL Mário",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "GOTTSCHALL Mário",
-        "Teamname": "",
         "player_id": "735714"
       },
       {
@@ -896,8 +840,6 @@
         "name": "HAJTMAR Adam",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "HAJTMAR Adam",
-        "Teamname": "",
         "player_id": "735296"
       },
       {
@@ -927,8 +869,6 @@
         "name": "HAJTMAR Jakub",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HAJTMAR Jakub",
-        "Teamname": "",
         "player_id": "733290"
       },
       {
@@ -958,8 +898,6 @@
         "name": "HANUŠ Mikuláš",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HANUŠ Mikuláš",
-        "Teamname": "",
         "player_id": "735686"
       },
       {
@@ -989,8 +927,6 @@
         "name": "HANUŠ šimon",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HANUŠ šimon",
-        "Teamname": "",
         "player_id": "735687"
       },
       {
@@ -1020,8 +956,6 @@
         "name": "HANZAL šimon",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "HANZAL šimon",
-        "Teamname": "",
         "player_id": "732905"
       },
       {
@@ -1051,8 +985,6 @@
         "name": "HARIG Marian",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "HARIG Marian",
-        "Teamname": "",
         "player_id": "735896"
       },
       {
@@ -1082,8 +1014,6 @@
         "name": "HASAL Matyáš",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HASAL Matyáš",
-        "Teamname": "",
         "player_id": "735688"
       },
       {
@@ -1113,8 +1043,6 @@
         "name": "HEJNÝ Stanislav",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "HEJNÝ Stanislav",
-        "Teamname": "",
         "player_id": "732940"
       },
       {
@@ -1144,8 +1072,6 @@
         "name": "HLUCHÝ Viktor",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "HLUCHÝ Viktor",
-        "Teamname": "",
         "player_id": "739235"
       },
       {
@@ -1175,8 +1101,6 @@
         "name": "HOJDA Jan",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "HOJDA Jan",
-        "Teamname": "",
         "player_id": "739236"
       },
       {
@@ -1206,8 +1130,6 @@
         "name": "HRDLIČKA Ondřej",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HRDLIČKA Ondřej",
-        "Teamname": "",
         "player_id": "735689"
       },
       {
@@ -1237,8 +1159,6 @@
         "name": "HŘIB Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HŘIB Martin",
-        "Teamname": "",
         "player_id": "735303"
       },
       {
@@ -1268,8 +1188,6 @@
         "name": "JACQUES Adam",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "JACQUES Adam",
-        "Teamname": "",
         "player_id": "732900"
       },
       {
@@ -1299,8 +1217,6 @@
         "name": "JOHNSON Ryan",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "JOHNSON Ryan",
-        "Teamname": "",
         "player_id": "737068"
       },
       {
@@ -1330,8 +1246,6 @@
         "name": "JOZEK Pavel",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "JOZEK Pavel",
-        "Teamname": "",
         "player_id": "732918"
       },
       {
@@ -1361,8 +1275,6 @@
         "name": "KALÁBEK Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "KALÁBEK Martin",
-        "Teamname": "",
         "player_id": "735304"
       },
       {
@@ -1392,8 +1304,6 @@
         "name": "KAŇOK Viktor",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KAŇOK Viktor",
-        "Teamname": "",
         "player_id": "735897"
       },
       {
@@ -1423,8 +1333,6 @@
         "name": "KLACL šimon",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "KLACL šimon",
-        "Teamname": "",
         "player_id": "735305"
       },
       {
@@ -1454,8 +1362,6 @@
         "name": "KLINER Jakub",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "KLINER Jakub",
-        "Teamname": "",
         "player_id": "732931"
       },
       {
@@ -1485,8 +1391,6 @@
         "name": "KONRÁD Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "KONRÁD Jan",
-        "Teamname": "",
         "player_id": "735716"
       },
       {
@@ -1516,8 +1420,6 @@
         "name": "KOZEL Matyáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KOZEL Matyáš",
-        "Teamname": "",
         "player_id": "735898"
       },
       {
@@ -1547,8 +1449,6 @@
         "name": "KOŽÍŠEK Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "KOŽÍŠEK Jan",
-        "Teamname": "",
         "player_id": "766323"
       },
       {
@@ -1578,8 +1478,6 @@
         "name": "KREJČIŘÍK Marek",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "KREJČIŘÍK Marek",
-        "Teamname": "",
         "player_id": "732916"
       },
       {
@@ -1609,8 +1507,6 @@
         "name": "KUBELKA Jan",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "KUBELKA Jan",
-        "Teamname": "",
         "player_id": "735306"
       },
       {
@@ -1640,8 +1536,6 @@
         "name": "KUBICA Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KUBICA Jakub",
-        "Teamname": "",
         "player_id": "735900"
       },
       {
@@ -1671,8 +1565,6 @@
         "name": "KUBÍČEK Filip",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "KUBÍČEK Filip",
-        "Teamname": "",
         "player_id": "739239"
       },
       {
@@ -1702,8 +1594,6 @@
         "name": "KUKLÍK Vojtěch",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KUKLÍK Vojtěch",
-        "Teamname": "",
         "player_id": "735336"
       },
       {
@@ -1733,8 +1623,6 @@
         "name": "KUČERA Filip",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KUČERA Filip",
-        "Teamname": "",
         "player_id": "735335"
       },
       {
@@ -1764,8 +1652,6 @@
         "name": "KÄCK Albin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KÄCK Albin",
-        "Teamname": "",
         "player_id": "735331"
       },
       {
@@ -1795,8 +1681,6 @@
         "name": "KŘEČEK David",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KŘEČEK David",
-        "Teamname": "",
         "player_id": "735334"
       },
       {
@@ -1826,8 +1710,6 @@
         "name": "LAVIČKA Filip",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "LAVIČKA Filip",
-        "Teamname": "",
         "player_id": "732954"
       },
       {
@@ -1857,8 +1739,6 @@
         "name": "LUKAVSKÝ Kryštof",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "LUKAVSKÝ Kryštof",
-        "Teamname": "",
         "player_id": "739242"
       },
       {
@@ -1888,8 +1768,6 @@
         "name": "LUKEŠ Max",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "LUKEŠ Max",
-        "Teamname": "",
         "player_id": "735338"
       },
       {
@@ -1919,8 +1797,6 @@
         "name": "MACHAČKA Zdeněk",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "MACHAČKA Zdeněk",
-        "Teamname": "",
         "player_id": "735717"
       },
       {
@@ -1950,8 +1826,6 @@
         "name": "MALÍK Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "MALÍK Jakub",
-        "Teamname": "",
         "player_id": "735902"
       },
       {
@@ -1981,8 +1855,6 @@
         "name": "MARTINEK Kryštof",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "MARTINEK Kryštof",
-        "Teamname": "",
         "player_id": "732911"
       },
       {
@@ -2012,8 +1884,6 @@
         "name": "MARTINČÁK Jonáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "MARTINČÁK Jonáš",
-        "Teamname": "",
         "player_id": "735903"
       },
       {
@@ -2043,8 +1913,6 @@
         "name": "MATUŠKA Adam",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "MATUŠKA Adam",
-        "Teamname": "",
         "player_id": "735339"
       },
       {
@@ -2074,8 +1942,6 @@
         "name": "MERGANS David",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "MERGANS David",
-        "Teamname": "",
         "player_id": "735718"
       },
       {
@@ -2105,8 +1971,6 @@
         "name": "MINAŘÍK Marek",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MINAŘÍK Marek",
-        "Teamname": "",
         "player_id": "732942"
       },
       {
@@ -2136,8 +2000,6 @@
         "name": "MIRANDA Camilo",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MIRANDA Camilo",
-        "Teamname": "",
         "player_id": "732943"
       },
       {
@@ -2167,8 +2029,6 @@
         "name": "MLÝNEK šimon",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MLÝNEK šimon",
-        "Teamname": "",
         "player_id": "732957"
       },
       {
@@ -2198,8 +2058,6 @@
         "name": "MONTEITH Philip",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MONTEITH Philip",
-        "Teamname": "",
         "player_id": "735356"
       },
       {
@@ -2229,8 +2087,6 @@
         "name": "MORAVEC Jaroslav",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "MORAVEC Jaroslav",
-        "Teamname": "",
         "player_id": "737070"
       },
       {
@@ -2260,8 +2116,6 @@
         "name": "MORGAN Benjamin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "MORGAN Benjamin",
-        "Teamname": "",
         "player_id": "735340"
       },
       {
@@ -2291,8 +2145,6 @@
         "name": "MULAČ Jan",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "MULAČ Jan",
-        "Teamname": "",
         "player_id": "739243"
       },
       {
@@ -2322,8 +2174,6 @@
         "name": "MUŽÍK Martin",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MUŽÍK Martin",
-        "Teamname": "",
         "player_id": "732944"
       },
       {
@@ -2353,8 +2203,6 @@
         "name": "NAKAMURA Yodai",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NAKAMURA Yodai",
-        "Teamname": "",
         "player_id": "735721"
       },
       {
@@ -2384,8 +2232,6 @@
         "name": "NETOPILÍK Matěj",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "NETOPILÍK Matěj",
-        "Teamname": "",
         "player_id": "743090"
       },
       {
@@ -2415,8 +2261,6 @@
         "name": "NIKOLAIENKO Stanislav",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NIKOLAIENKO Stanislav",
-        "Teamname": "",
         "player_id": "735722"
       },
       {
@@ -2446,8 +2290,6 @@
         "name": "NOSEK Eduard",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NOSEK Eduard",
-        "Teamname": "",
         "player_id": "735723"
       },
       {
@@ -2477,8 +2319,6 @@
         "name": "NOVOTNÝ Matyáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "NOVOTNÝ Matyáš",
-        "Teamname": "",
         "player_id": "735904"
       },
       {
@@ -2508,8 +2348,6 @@
         "name": "NOVÝ Vítězslav",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "NOVÝ Vítězslav",
-        "Teamname": "",
         "player_id": "732903"
       },
       {
@@ -2539,8 +2377,6 @@
         "name": "NĚMEC Filip",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "NĚMEC Filip",
-        "Teamname": "",
         "player_id": "739244"
       },
       {
@@ -2570,8 +2406,6 @@
         "name": "NĚMČANSKÝ Matyáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "NĚMČANSKÝ Matyáš",
-        "Teamname": "",
         "player_id": "735368"
       },
       {
@@ -2601,8 +2435,6 @@
         "name": "NĚMČANSKÝ štěpán",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "NĚMČANSKÝ štěpán",
-        "Teamname": "",
         "player_id": "732913"
       },
       {
@@ -2632,8 +2464,6 @@
         "name": "OGINO Takashi",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "OGINO Takashi",
-        "Teamname": "",
         "player_id": "735294"
       },
       {
@@ -2663,8 +2493,6 @@
         "name": "OKÁČ Filip",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "OKÁČ Filip",
-        "Teamname": "",
         "player_id": "735307"
       },
       {
@@ -2694,8 +2522,6 @@
         "name": "ONDROUŠEK Daniel",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "ONDROUŠEK Daniel",
-        "Teamname": "",
         "player_id": "732898"
       },
       {
@@ -2725,8 +2551,6 @@
         "name": "OŠMERA Adam",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "OŠMERA Adam",
-        "Teamname": "",
         "player_id": "735905"
       },
       {
@@ -2756,8 +2580,6 @@
         "name": "PEJCHAL Kamil",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "PEJCHAL Kamil",
-        "Teamname": "",
         "player_id": "732915"
       },
       {
@@ -2787,8 +2609,6 @@
         "name": "PERNIČKA Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "PERNIČKA Martin",
-        "Teamname": "",
         "player_id": "733294"
       },
       {
@@ -2818,8 +2638,6 @@
         "name": "PEROUTKA Pavel",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "PEROUTKA Pavel",
-        "Teamname": "",
         "player_id": "732925"
       },
       {
@@ -2849,8 +2667,6 @@
         "name": "PLACHÝ Tomáš",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PLACHÝ Tomáš",
-        "Teamname": "",
         "player_id": "735344"
       },
       {
@@ -2880,8 +2696,6 @@
         "name": "POKORNÝ Michal",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "POKORNÝ Michal",
-        "Teamname": "",
         "player_id": "732909"
       },
       {
@@ -2911,8 +2725,6 @@
         "name": "POSPÍŠIL Jan",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "POSPÍŠIL Jan",
-        "Teamname": "",
         "player_id": "732914"
       },
       {
@@ -2942,8 +2754,6 @@
         "name": "PRANDŽEV Aleš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "PRANDŽEV Aleš",
-        "Teamname": "",
         "player_id": "739245"
       },
       {
@@ -2973,8 +2783,6 @@
         "name": "PREJDA Max",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PREJDA Max",
-        "Teamname": "",
         "player_id": "735345"
       },
       {
@@ -3004,8 +2812,6 @@
         "name": "PROCHÁZKA Jonáš",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "PROCHÁZKA Jonáš",
-        "Teamname": "",
         "player_id": "741993"
       },
       {
@@ -3035,8 +2841,6 @@
         "name": "PROKOP Milan",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "PROKOP Milan",
-        "Teamname": "",
         "player_id": "735309"
       },
       {
@@ -3066,8 +2870,6 @@
         "name": "PRUDIL Adam",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "PRUDIL Adam",
-        "Teamname": "",
         "player_id": "735310"
       },
       {
@@ -3097,8 +2899,6 @@
         "name": "PRŮCHA Samuel",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PRŮCHA Samuel",
-        "Teamname": "",
         "player_id": "735346"
       },
       {
@@ -3128,8 +2928,6 @@
         "name": "PUŠ Jáchym",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PUŠ Jáchym",
-        "Teamname": "",
         "player_id": "735347"
       },
       {
@@ -3159,8 +2957,6 @@
         "name": "RIVAS Raul",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "RIVAS Raul",
-        "Teamname": "",
         "player_id": "735369"
       },
       {
@@ -3190,8 +2986,6 @@
         "name": "RŮŽIČKA Benedikt",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "RŮŽIČKA Benedikt",
-        "Teamname": "",
         "player_id": "732935"
       },
       {
@@ -3221,8 +3015,6 @@
         "name": "SAMSON Maxim",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SAMSON Maxim",
-        "Teamname": "",
         "player_id": "732939"
       },
       {
@@ -3252,8 +3044,6 @@
         "name": "SCHWARZINGER Mathias",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "SCHWARZINGER Mathias",
-        "Teamname": "",
         "player_id": "732907"
       },
       {
@@ -3283,8 +3073,6 @@
         "name": "SKOPAL Robin",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "SKOPAL Robin",
-        "Teamname": "",
         "player_id": "732908"
       },
       {
@@ -3314,8 +3102,6 @@
         "name": "SKÁLA Adam",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SKÁLA Adam",
-        "Teamname": "",
         "player_id": "732922"
       },
       {
@@ -3345,8 +3131,6 @@
         "name": "SLABÝ Marek",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "SLABÝ Marek",
-        "Teamname": "",
         "player_id": "739246"
       },
       {
@@ -3376,8 +3160,6 @@
         "name": "SLAPNIČKA Marek",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "SLAPNIČKA Marek",
-        "Teamname": "",
         "player_id": "735910"
       },
       {
@@ -3407,8 +3189,6 @@
         "name": "SMITH Brandon",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "SMITH Brandon",
-        "Teamname": "",
         "player_id": "735911"
       },
       {
@@ -3438,8 +3218,6 @@
         "name": "SMOLA Matyáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "SMOLA Matyáš",
-        "Teamname": "",
         "player_id": "739247"
       },
       {
@@ -3469,8 +3247,6 @@
         "name": "SOBOTKA Martin",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "SOBOTKA Martin",
-        "Teamname": "",
         "player_id": "735729"
       },
       {
@@ -3500,8 +3276,6 @@
         "name": "STANĚK Antonín",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "STANĚK Antonín",
-        "Teamname": "",
         "player_id": "735731"
       },
       {
@@ -3531,8 +3305,6 @@
         "name": "STANĚK Vít",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "STANĚK Vít",
-        "Teamname": "",
         "player_id": "738506"
       },
       {
@@ -3562,8 +3334,6 @@
         "name": "TAKEDA Matias",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "TAKEDA Matias",
-        "Teamname": "",
         "player_id": "733297"
       },
       {
@@ -3593,8 +3363,6 @@
         "name": "TAKIGUCHI Yutaro",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "TAKIGUCHI Yutaro",
-        "Teamname": "",
         "player_id": "757492"
       },
       {
@@ -3624,8 +3392,6 @@
         "name": "TOŠOVSKÝ Adam",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "TOŠOVSKÝ Adam",
-        "Teamname": "",
         "player_id": "739248"
       },
       {
@@ -3655,8 +3421,6 @@
         "name": "TRENDL Ondřej",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "TRENDL Ondřej",
-        "Teamname": "",
         "player_id": "735370"
       },
       {
@@ -3686,8 +3450,6 @@
         "name": "TRUNKÁT Lukáš",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "TRUNKÁT Lukáš",
-        "Teamname": "",
         "player_id": "732899"
       },
       {
@@ -3717,8 +3479,6 @@
         "name": "TRČKA Matyáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "TRČKA Matyáš",
-        "Teamname": "",
         "player_id": "735360"
       },
       {
@@ -3748,8 +3508,6 @@
         "name": "TUČEK šimon",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "TUČEK šimon",
-        "Teamname": "",
         "player_id": "735351"
       },
       {
@@ -3779,8 +3537,6 @@
         "name": "UEMURA Koya",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "UEMURA Koya",
-        "Teamname": "",
         "player_id": "738584"
       },
       {
@@ -3810,8 +3566,6 @@
         "name": "UGUSA Koki",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "UGUSA Koki",
-        "Teamname": "",
         "player_id": "735352"
       },
       {
@@ -3841,8 +3595,6 @@
         "name": "URBÁNEK Jan",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "URBÁNEK Jan",
-        "Teamname": "",
         "player_id": "732919"
       },
       {
@@ -3872,8 +3624,6 @@
         "name": "URBÁNEK Lukáš",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "URBÁNEK Lukáš",
-        "Teamname": "",
         "player_id": "735312"
       },
       {
@@ -3903,8 +3653,6 @@
         "name": "VANČURA Matyáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VANČURA Matyáš",
-        "Teamname": "",
         "player_id": "735361"
       },
       {
@@ -3934,8 +3682,6 @@
         "name": "VANČURA Vilém",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VANČURA Vilém",
-        "Teamname": "",
         "player_id": "735353"
       },
       {
@@ -3965,8 +3711,6 @@
         "name": "VELETA Antonín",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "VELETA Antonín",
-        "Teamname": "",
         "player_id": "735734"
       },
       {
@@ -3996,8 +3740,6 @@
         "name": "VELETA štěpán",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "VELETA štěpán",
-        "Teamname": "",
         "player_id": "735735"
       },
       {
@@ -4027,8 +3769,6 @@
         "name": "VELÁZQUEZ Vicente",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VELÁZQUEZ Vicente",
-        "Teamname": "",
         "player_id": "743194"
       },
       {
@@ -4058,8 +3798,6 @@
         "name": "VENHODA Tomáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "VENHODA Tomáš",
-        "Teamname": "",
         "player_id": "732933"
       },
       {
@@ -4089,8 +3827,6 @@
         "name": "VENTRUBA Vojtěch",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VENTRUBA Vojtěch",
-        "Teamname": "",
         "player_id": "733296"
       },
       {
@@ -4120,8 +3856,6 @@
         "name": "VENTRUBA Vít",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VENTRUBA Vít",
-        "Teamname": "",
         "player_id": "735314"
       },
       {
@@ -4151,8 +3885,6 @@
         "name": "VLACH Matěj",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VLACH Matěj",
-        "Teamname": "",
         "player_id": "732948"
       },
       {
@@ -4182,8 +3914,6 @@
         "name": "VLACH Vojtěch",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VLACH Vojtěch",
-        "Teamname": "",
         "player_id": "732947"
       },
       {
@@ -4213,8 +3943,6 @@
         "name": "VRÁBEL Milan",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VRÁBEL Milan",
-        "Teamname": "",
         "player_id": "732958"
       },
       {
@@ -4244,8 +3972,6 @@
         "name": "VYKOUKAL Michael",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "VYKOUKAL Michael",
-        "Teamname": "",
         "player_id": "735913"
       },
       {
@@ -4275,8 +4001,6 @@
         "name": "VŠETEČKA šimon",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "VŠETEČKA šimon",
-        "Teamname": "",
         "player_id": "735912"
       },
       {
@@ -4306,8 +4030,6 @@
         "name": "WEINZIMER Marcus",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "WEINZIMER Marcus",
-        "Teamname": "",
         "player_id": "735362"
       },
       {
@@ -4337,8 +4059,6 @@
         "name": "WINKLER Jakub",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "WINKLER Jakub",
-        "Teamname": "",
         "player_id": "735315"
       },
       {
@@ -4368,8 +4088,6 @@
         "name": "ZELENKA Martin",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "ZELENKA Martin",
-        "Teamname": "",
         "player_id": "735363"
       },
       {
@@ -4399,8 +4117,6 @@
         "name": "ZELENKA Michal",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "ZELENKA Michal",
-        "Teamname": "",
         "player_id": "763308"
       },
       {
@@ -4430,8 +4146,6 @@
         "name": "ZÝMA Petr",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ZÝMA Petr",
-        "Teamname": "",
         "player_id": "738585"
       },
       {
@@ -4461,8 +4175,6 @@
         "name": "ČAPKA Filip",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ČAPKA Filip",
-        "Teamname": "",
         "player_id": "733293"
       },
       {
@@ -4492,8 +4204,6 @@
         "name": "ČAPKA Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ČAPKA Martin",
-        "Teamname": "",
         "player_id": "735298"
       },
       {
@@ -4523,8 +4233,6 @@
         "name": "ČERNÝ Daniel",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "ČERNÝ Daniel",
-        "Teamname": "",
         "player_id": "735895"
       },
       {
@@ -4554,8 +4262,6 @@
         "name": "ČERVENKA Martin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "ČERVENKA Martin",
-        "Teamname": "",
         "player_id": "735319"
       },
       {
@@ -4585,8 +4291,6 @@
         "name": "ČERVINKA Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ČERVINKA Martin",
-        "Teamname": "",
         "player_id": "735299"
       },
       {
@@ -4616,8 +4320,6 @@
         "name": "ŘÍČNÝ Tomáš",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "ŘÍČNÝ Tomáš",
-        "Teamname": "",
         "player_id": "732901"
       },
       {
@@ -4647,8 +4349,6 @@
         "name": "ŠABACKÝ Vojtěch",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "ŠABACKÝ Vojtěch",
-        "Teamname": "",
         "player_id": "732930"
       },
       {
@@ -4678,8 +4378,6 @@
         "name": "ŠINDELKA Michal",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ŠINDELKA Michal",
-        "Teamname": "",
         "player_id": "735311"
       },
       {
@@ -4709,8 +4407,6 @@
         "name": "ŠINDLER Filip",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ŠINDLER Filip",
-        "Teamname": "",
         "player_id": "761202"
       },
       {
@@ -4740,8 +4436,6 @@
         "name": "ŠKOPEK David",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "ŠKOPEK David",
-        "Teamname": "",
         "player_id": "735728"
       },
       {
@@ -4771,8 +4465,6 @@
         "name": "ŠPIMR Matěj",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "ŠPIMR Matěj",
-        "Teamname": "",
         "player_id": "735730"
       },
       {
@@ -4802,8 +4494,6 @@
         "name": "ŠÍN Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "ŠÍN Jakub",
-        "Teamname": "",
         "player_id": "735909"
       },
       {
@@ -4833,14 +4523,12 @@
         "name": "ŽUPANYN Vasyl",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "ŽUPANYN Vasyl",
-        "Teamname": "",
         "player_id": "732946"
       }
     ],
     "headers": [
       {
-        "column": "Player",
+        "column": "name",
         "label": "Player"
       },
       {
@@ -4999,8 +4687,6 @@
         "name": "BERÁNEK Viktor",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "BERÁNEK Viktor",
-        "Teamname": "",
         "player_id": "732906"
       },
       {
@@ -5035,8 +4721,6 @@
         "name": "BLAŽEK Lukáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "BLAŽEK Lukáš",
-        "Teamname": "",
         "player_id": "732952"
       },
       {
@@ -5071,8 +4755,6 @@
         "name": "BOKAJ Boris",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "BOKAJ Boris",
-        "Teamname": "",
         "player_id": "735893"
       },
       {
@@ -5107,8 +4789,6 @@
         "name": "BRACEY Markus",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "BRACEY Markus",
-        "Teamname": "",
         "player_id": "737073"
       },
       {
@@ -5143,8 +4823,6 @@
         "name": "CASTILLO Jesus",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "CASTILLO Jesus",
-        "Teamname": "",
         "player_id": "737074"
       },
       {
@@ -5179,8 +4857,6 @@
         "name": "CHROMÝ Lukáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "CHROMÝ Lukáš",
-        "Teamname": "",
         "player_id": "732955"
       },
       {
@@ -5215,8 +4891,6 @@
         "name": "CURRIE Benjamin",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "CURRIE Benjamin",
-        "Teamname": "",
         "player_id": "735683"
       },
       {
@@ -5251,8 +4925,6 @@
         "name": "DAVILA Vladimir",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "DAVILA Vladimir",
-        "Teamname": "",
         "player_id": "763391"
       },
       {
@@ -5287,8 +4959,6 @@
         "name": "DUFFEK Tomáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "DUFFEK Tomáš",
-        "Teamname": "",
         "player_id": "738583"
       },
       {
@@ -5323,8 +4993,6 @@
         "name": "DUPAL Kryštof",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "DUPAL Kryštof",
-        "Teamname": "",
         "player_id": "735684"
       },
       {
@@ -5359,8 +5027,6 @@
         "name": "ERCOLI Lukáš",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "ERCOLI Lukáš",
-        "Teamname": "",
         "player_id": "735324"
       },
       {
@@ -5395,8 +5061,6 @@
         "name": "GALINDO Cristian",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "GALINDO Cristian",
-        "Teamname": "",
         "player_id": "735355"
       },
       {
@@ -5431,8 +5095,6 @@
         "name": "GONZALEZ Jesus",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "GONZALEZ Jesus",
-        "Teamname": "",
         "player_id": "748400"
       },
       {
@@ -5467,8 +5129,6 @@
         "name": "GUEVARA Jose",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "GUEVARA Jose",
-        "Teamname": "",
         "player_id": "774653"
       },
       {
@@ -5503,8 +5163,6 @@
         "name": "HANUŠ šimon",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HANUŠ šimon",
-        "Teamname": "",
         "player_id": "735687"
       },
       {
@@ -5539,8 +5197,6 @@
         "name": "HASAL Matyáš",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HASAL Matyáš",
-        "Teamname": "",
         "player_id": "735688"
       },
       {
@@ -5575,8 +5231,6 @@
         "name": "HEDL Filip",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HEDL Filip",
-        "Teamname": "",
         "player_id": "735301"
       },
       {
@@ -5611,8 +5265,6 @@
         "name": "HELMICH Jan",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "HELMICH Jan",
-        "Teamname": "",
         "player_id": "739234"
       },
       {
@@ -5647,8 +5299,6 @@
         "name": "HEŘMAN David",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HEŘMAN David",
-        "Teamname": "",
         "player_id": "735302"
       },
       {
@@ -5683,8 +5333,6 @@
         "name": "HLOUCH Lukáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "HLOUCH Lukáš",
-        "Teamname": "",
         "player_id": "732927"
       },
       {
@@ -5719,8 +5367,6 @@
         "name": "HRDLIČKA Vít",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "HRDLIČKA Vít",
-        "Teamname": "",
         "player_id": "735330"
       },
       {
@@ -5755,8 +5401,6 @@
         "name": "JAKUBEC Matyáš",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "JAKUBEC Matyáš",
-        "Teamname": "",
         "player_id": "763457"
       },
       {
@@ -5791,8 +5435,6 @@
         "name": "JOHNSON Ryan",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "JOHNSON Ryan",
-        "Teamname": "",
         "player_id": "737068"
       },
       {
@@ -5827,8 +5469,6 @@
         "name": "KAVAN Kryštof",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "KAVAN Kryštof",
-        "Teamname": "",
         "player_id": "735690"
       },
       {
@@ -5863,8 +5503,6 @@
         "name": "KOBERA Robert",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "KOBERA Robert",
-        "Teamname": "",
         "player_id": "739237"
       },
       {
@@ -5899,8 +5537,6 @@
         "name": "KOLEV Vasko",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "KOLEV Vasko",
-        "Teamname": "",
         "player_id": "739238"
       },
       {
@@ -5935,8 +5571,6 @@
         "name": "KOLLMANN Filip",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "KOLLMANN Filip",
-        "Teamname": "",
         "player_id": "732924"
       },
       {
@@ -5971,8 +5605,6 @@
         "name": "KONRÁD Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "KONRÁD Jan",
-        "Teamname": "",
         "player_id": "735716"
       },
       {
@@ -6007,8 +5639,6 @@
         "name": "KOZEL Jan",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KOZEL Jan",
-        "Teamname": "",
         "player_id": "735899"
       },
       {
@@ -6043,8 +5673,6 @@
         "name": "KRIŽAN Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KRIŽAN Jakub",
-        "Teamname": "",
         "player_id": "761205"
       },
       {
@@ -6079,8 +5707,6 @@
         "name": "KUČERA Filip",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KUČERA Filip",
-        "Teamname": "",
         "player_id": "735335"
       },
       {
@@ -6115,8 +5741,6 @@
         "name": "KŘEČEK David",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KŘEČEK David",
-        "Teamname": "",
         "player_id": "735334"
       },
       {
@@ -6151,8 +5775,6 @@
         "name": "LEMMON Alec",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "LEMMON Alec",
-        "Teamname": "",
         "player_id": "739293"
       },
       {
@@ -6187,8 +5809,6 @@
         "name": "LIMA Jose",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "LIMA Jose",
-        "Teamname": "",
         "player_id": "735367"
       },
       {
@@ -6223,8 +5843,6 @@
         "name": "LOPEZ Aliangel",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "LOPEZ Aliangel",
-        "Teamname": "",
         "player_id": "757327"
       },
       {
@@ -6259,8 +5877,6 @@
         "name": "LORENC Jan",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "LORENC Jan",
-        "Teamname": "",
         "player_id": "735337"
       },
       {
@@ -6295,8 +5911,6 @@
         "name": "LOUB Matouš",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "LOUB Matouš",
-        "Teamname": "",
         "player_id": "761838"
       },
       {
@@ -6331,8 +5945,6 @@
         "name": "LUKEŠ Max",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "LUKEŠ Max",
-        "Teamname": "",
         "player_id": "735338"
       },
       {
@@ -6367,8 +5979,6 @@
         "name": "MALCONIAN Matthew",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "MALCONIAN Matthew",
-        "Teamname": "",
         "player_id": "754576"
       },
       {
@@ -6403,8 +6013,6 @@
         "name": "MINAŘÍK Marek",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MINAŘÍK Marek",
-        "Teamname": "",
         "player_id": "732942"
       },
       {
@@ -6439,8 +6047,6 @@
         "name": "MLÝNEK Matouš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MLÝNEK Matouš",
-        "Teamname": "",
         "player_id": "752952"
       },
       {
@@ -6475,8 +6081,6 @@
         "name": "MLÝNEK šimon",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MLÝNEK šimon",
-        "Teamname": "",
         "player_id": "732957"
       },
       {
@@ -6511,8 +6115,6 @@
         "name": "MONCADA Luis",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "MONCADA Luis",
-        "Teamname": "",
         "player_id": "733298"
       },
       {
@@ -6547,8 +6149,6 @@
         "name": "MRAKOVCIC Maxim",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "MRAKOVCIC Maxim",
-        "Teamname": "",
         "player_id": "761203"
       },
       {
@@ -6583,8 +6183,6 @@
         "name": "NAVRÁTIL Ondřej",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "NAVRÁTIL Ondřej",
-        "Teamname": "",
         "player_id": "732912"
       },
       {
@@ -6619,8 +6217,6 @@
         "name": "NETOPILÍK Matěj",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "NETOPILÍK Matěj",
-        "Teamname": "",
         "player_id": "743090"
       },
       {
@@ -6655,8 +6251,6 @@
         "name": "NIKOLAIENKO Stanislav",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NIKOLAIENKO Stanislav",
-        "Teamname": "",
         "player_id": "735722"
       },
       {
@@ -6691,8 +6285,6 @@
         "name": "NOVOTNÝ Matyáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "NOVOTNÝ Matyáš",
-        "Teamname": "",
         "player_id": "735904"
       },
       {
@@ -6727,8 +6319,6 @@
         "name": "NOVÁK Jan",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "NOVÁK Jan",
-        "Teamname": "",
         "player_id": "735341"
       },
       {
@@ -6763,8 +6353,6 @@
         "name": "NOVÁK Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NOVÁK Jan",
-        "Teamname": "",
         "player_id": "735724"
       },
       {
@@ -6799,8 +6387,6 @@
         "name": "NĚMEC Filip",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "NĚMEC Filip",
-        "Teamname": "",
         "player_id": "739244"
       },
       {
@@ -6835,8 +6421,6 @@
         "name": "OCHOA Roldan",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "OCHOA Roldan",
-        "Teamname": "",
         "player_id": "735357"
       },
       {
@@ -6871,8 +6455,6 @@
         "name": "ONDRA Tomáš",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ONDRA Tomáš",
-        "Teamname": "",
         "player_id": "735308"
       },
       {
@@ -6907,8 +6489,6 @@
         "name": "OSECKÝ Vojtěch",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "OSECKÝ Vojtěch",
-        "Teamname": "",
         "player_id": "735725"
       },
       {
@@ -6943,8 +6523,6 @@
         "name": "PACAL Lukáš",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "PACAL Lukáš",
-        "Teamname": "",
         "player_id": "737071"
       },
       {
@@ -6979,8 +6557,6 @@
         "name": "PEROUTKA Pavel",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "PEROUTKA Pavel",
-        "Teamname": "",
         "player_id": "732925"
       },
       {
@@ -7015,8 +6591,6 @@
         "name": "PJONTEK Matyáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "PJONTEK Matyáš",
-        "Teamname": "",
         "player_id": "735906"
       },
       {
@@ -7051,8 +6625,6 @@
         "name": "PLACHÝ Tomáš",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PLACHÝ Tomáš",
-        "Teamname": "",
         "player_id": "735344"
       },
       {
@@ -7087,8 +6659,6 @@
         "name": "PRAŽÁK Albert",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "PRAŽÁK Albert",
-        "Teamname": "",
         "player_id": "735359"
       },
       {
@@ -7123,8 +6693,6 @@
         "name": "SAMSON Maxim",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SAMSON Maxim",
-        "Teamname": "",
         "player_id": "732939"
       },
       {
@@ -7159,8 +6727,6 @@
         "name": "SATORIA Ondřej",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "SATORIA Ondřej",
-        "Teamname": "",
         "player_id": "735907"
       },
       {
@@ -7195,8 +6761,6 @@
         "name": "SCHWARZ Albert",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "SCHWARZ Albert",
-        "Teamname": "",
         "player_id": "735726"
       },
       {
@@ -7231,8 +6795,6 @@
         "name": "SCHWARZINGER Mathias",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "SCHWARZINGER Mathias",
-        "Teamname": "",
         "player_id": "732907"
       },
       {
@@ -7267,8 +6829,6 @@
         "name": "SKÁLA Adam",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SKÁLA Adam",
-        "Teamname": "",
         "player_id": "732922"
       },
       {
@@ -7303,8 +6863,6 @@
         "name": "SMEJKAL Lukáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SMEJKAL Lukáš",
-        "Teamname": "",
         "player_id": "732920"
       },
       {
@@ -7339,8 +6897,6 @@
         "name": "SMITH Brandon",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "SMITH Brandon",
-        "Teamname": "",
         "player_id": "735911"
       },
       {
@@ -7375,8 +6931,6 @@
         "name": "SOBOTKA Daniel",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "SOBOTKA Daniel",
-        "Teamname": "",
         "player_id": "732910"
       },
       {
@@ -7411,8 +6965,6 @@
         "name": "SOBOTKA Martin",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "SOBOTKA Martin",
-        "Teamname": "",
         "player_id": "735729"
       },
       {
@@ -7447,8 +6999,6 @@
         "name": "TAMBA Natsuki",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "TAMBA Natsuki",
-        "Teamname": "",
         "player_id": "739241"
       },
       {
@@ -7483,8 +7033,6 @@
         "name": "TRČKA Matyáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "TRČKA Matyáš",
-        "Teamname": "",
         "player_id": "735360"
       },
       {
@@ -7519,8 +7067,6 @@
         "name": "UEMURA Koya",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "UEMURA Koya",
-        "Teamname": "",
         "player_id": "738584"
       },
       {
@@ -7555,8 +7101,6 @@
         "name": "URBÁNEK Jan",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "URBÁNEK Jan",
-        "Teamname": "",
         "player_id": "732919"
       },
       {
@@ -7591,8 +7135,6 @@
         "name": "URBÁNEK Tomáš",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "URBÁNEK Tomáš",
-        "Teamname": "",
         "player_id": "733295"
       },
       {
@@ -7627,8 +7169,6 @@
         "name": "VANK Ondřej",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VANK Ondřej",
-        "Teamname": "",
         "player_id": "765842"
       },
       {
@@ -7663,8 +7203,6 @@
         "name": "VAŠOUREK Jan",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VAŠOUREK Jan",
-        "Teamname": "",
         "player_id": "733292"
       },
       {
@@ -7699,8 +7237,6 @@
         "name": "VENHODA Tomáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "VENHODA Tomáš",
-        "Teamname": "",
         "player_id": "732933"
       },
       {
@@ -7735,8 +7271,6 @@
         "name": "VENTRUBA Vojtěch",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VENTRUBA Vojtěch",
-        "Teamname": "",
         "player_id": "733296"
       },
       {
@@ -7771,8 +7305,6 @@
         "name": "VENTRUBA Vít",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VENTRUBA Vít",
-        "Teamname": "",
         "player_id": "735314"
       },
       {
@@ -7807,8 +7339,6 @@
         "name": "VESELÝ Adam",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "VESELÝ Adam",
-        "Teamname": "",
         "player_id": "732921"
       },
       {
@@ -7843,8 +7373,6 @@
         "name": "VEČERKA Boris",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "VEČERKA Boris",
-        "Teamname": "",
         "player_id": "743211"
       },
       {
@@ -7879,8 +7407,6 @@
         "name": "VEČERKA Viktor",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VEČERKA Viktor",
-        "Teamname": "",
         "player_id": "735313"
       },
       {
@@ -7915,8 +7441,6 @@
         "name": "VLACH Vojtěch",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VLACH Vojtěch",
-        "Teamname": "",
         "player_id": "732947"
       },
       {
@@ -7951,8 +7475,6 @@
         "name": "VOSTATEK Ondřej",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VOSTATEK Ondřej",
-        "Teamname": "",
         "player_id": "735354"
       },
       {
@@ -7987,8 +7509,6 @@
         "name": "VŠETEČKA šimon",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "VŠETEČKA šimon",
-        "Teamname": "",
         "player_id": "735912"
       },
       {
@@ -8023,8 +7543,6 @@
         "name": "ZAVADIL Tadeáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ZAVADIL Tadeáš",
-        "Teamname": "",
         "player_id": "739249"
       },
       {
@@ -8059,8 +7577,6 @@
         "name": "ZELENKA Martin",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "ZELENKA Martin",
-        "Teamname": "",
         "player_id": "735363"
       },
       {
@@ -8095,8 +7611,6 @@
         "name": "ČAPKA Filip",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ČAPKA Filip",
-        "Teamname": "",
         "player_id": "733293"
       },
       {
@@ -8131,8 +7645,6 @@
         "name": "ŠKOPEK David",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "ŠKOPEK David",
-        "Teamname": "",
         "player_id": "735728"
       },
       {
@@ -8167,8 +7679,6 @@
         "name": "ŠPIMR Matěj",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "ŠPIMR Matěj",
-        "Teamname": "",
         "player_id": "735730"
       },
       {
@@ -8203,14 +7713,12 @@
         "name": "ŠÍN Alexandr",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "ŠÍN Alexandr",
-        "Teamname": "",
         "player_id": "735908"
       }
     ],
     "headers": [
       {
-        "column": "Player",
+        "column": "name",
         "label": "Player"
       },
       {
@@ -8375,8 +7883,6 @@
         "name": "ALVAREZ Roberto",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "ALVAREZ Roberto",
-        "Teamname": "",
         "player_id": "737072"
       },
       {
@@ -8396,8 +7902,6 @@
         "name": "ANTOŇ Michal",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ANTOŇ Michal",
-        "Teamname": "",
         "player_id": "738582"
       },
       {
@@ -8417,8 +7921,6 @@
         "name": "BARTOŇ David",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "BARTOŇ David",
-        "Teamname": "",
         "player_id": "735297"
       },
       {
@@ -8438,8 +7940,6 @@
         "name": "BERÁNEK Viktor",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "BERÁNEK Viktor",
-        "Teamname": "",
         "player_id": "732906"
       },
       {
@@ -8459,8 +7959,6 @@
         "name": "BILÍČEK Jan",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "BILÍČEK Jan",
-        "Teamname": "",
         "player_id": "732936"
       },
       {
@@ -8480,8 +7978,6 @@
         "name": "BLAŽEK šimon",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "BLAŽEK šimon",
-        "Teamname": "",
         "player_id": "735317"
       },
       {
@@ -8501,8 +7997,6 @@
         "name": "BOUCK Parks",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "BOUCK Parks",
-        "Teamname": "",
         "player_id": "735931"
       },
       {
@@ -8522,8 +8016,6 @@
         "name": "BRACAMONTE Gabriel",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "BRACAMONTE Gabriel",
-        "Teamname": "",
         "player_id": "735365"
       },
       {
@@ -8543,8 +8035,6 @@
         "name": "BRACEY Markus",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "BRACEY Markus",
-        "Teamname": "",
         "player_id": "737073"
       },
       {
@@ -8564,8 +8054,6 @@
         "name": "BROWN Jakub",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "BROWN Jakub",
-        "Teamname": "",
         "player_id": "735682"
       },
       {
@@ -8585,8 +8073,6 @@
         "name": "BUBENÍK Matouš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "BUBENÍK Matouš",
-        "Teamname": "",
         "player_id": "739240"
       },
       {
@@ -8606,8 +8092,6 @@
         "name": "BÍLEK David",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "BÍLEK David",
-        "Teamname": "",
         "player_id": "732928"
       },
       {
@@ -8627,8 +8111,6 @@
         "name": "BŘEČKA Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "BŘEČKA Jakub",
-        "Teamname": "",
         "player_id": "735894"
       },
       {
@@ -8648,8 +8130,6 @@
         "name": "CASTILLO Jesus",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "CASTILLO Jesus",
-        "Teamname": "",
         "player_id": "737074"
       },
       {
@@ -8669,8 +8149,6 @@
         "name": "CHLUP Marek",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "CHLUP Marek",
-        "Teamname": "",
         "player_id": "774747"
       },
       {
@@ -8690,8 +8168,6 @@
         "name": "CHROMÝ Lukáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "CHROMÝ Lukáš",
-        "Teamname": "",
         "player_id": "732955"
       },
       {
@@ -8711,8 +8187,6 @@
         "name": "COLINA Jose",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "COLINA Jose",
-        "Teamname": "",
         "player_id": "757326"
       },
       {
@@ -8732,8 +8206,6 @@
         "name": "CURRIE Benjamin",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "CURRIE Benjamin",
-        "Teamname": "",
         "player_id": "735683"
       },
       {
@@ -8753,8 +8225,6 @@
         "name": "DAVILA Vladimir",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "DAVILA Vladimir",
-        "Teamname": "",
         "player_id": "763391"
       },
       {
@@ -8774,8 +8244,6 @@
         "name": "DERGANZ Lukáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "DERGANZ Lukáš",
-        "Teamname": "",
         "player_id": "739233"
       },
       {
@@ -8795,8 +8263,6 @@
         "name": "DOHNAL Ladislav",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "DOHNAL Ladislav",
-        "Teamname": "",
         "player_id": "732937"
       },
       {
@@ -8816,8 +8282,6 @@
         "name": "DRÁPELA šimon",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "DRÁPELA šimon",
-        "Teamname": "",
         "player_id": "735320"
       },
       {
@@ -8837,8 +8301,6 @@
         "name": "DUBOVÝ Arnošt",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "DUBOVÝ Arnošt",
-        "Teamname": "",
         "player_id": "735295"
       },
       {
@@ -8858,8 +8320,6 @@
         "name": "DUFFEK Tomáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "DUFFEK Tomáš",
-        "Teamname": "",
         "player_id": "738583"
       },
       {
@@ -8879,8 +8339,6 @@
         "name": "DUPAL Kryštof",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "DUPAL Kryštof",
-        "Teamname": "",
         "player_id": "735684"
       },
       {
@@ -8900,8 +8358,6 @@
         "name": "DVOŘÁK Matěj",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "DVOŘÁK Matěj",
-        "Teamname": "",
         "player_id": "732949"
       },
       {
@@ -8921,8 +8377,6 @@
         "name": "ERCOLI Lukáš",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "ERCOLI Lukáš",
-        "Teamname": "",
         "player_id": "735324"
       },
       {
@@ -8942,8 +8396,6 @@
         "name": "FANCHER Dominik",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "FANCHER Dominik",
-        "Teamname": "",
         "player_id": "735325"
       },
       {
@@ -8963,8 +8415,6 @@
         "name": "FEJT Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "FEJT Jan",
-        "Teamname": "",
         "player_id": "735685"
       },
       {
@@ -8984,8 +8434,6 @@
         "name": "FIALA David",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "FIALA David",
-        "Teamname": "",
         "player_id": "732902"
       },
       {
@@ -9005,8 +8453,6 @@
         "name": "GALASKA Ryker",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "GALASKA Ryker",
-        "Teamname": "",
         "player_id": "769385"
       },
       {
@@ -9026,8 +8472,6 @@
         "name": "GALINDO Cristian",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "GALINDO Cristian",
-        "Teamname": "",
         "player_id": "735355"
       },
       {
@@ -9047,8 +8491,6 @@
         "name": "GIECI Martin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "GIECI Martin",
-        "Teamname": "",
         "player_id": "735327"
       },
       {
@@ -9068,8 +8510,6 @@
         "name": "GONZALEZ Jesus",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "GONZALEZ Jesus",
-        "Teamname": "",
         "player_id": "748400"
       },
       {
@@ -9089,8 +8529,6 @@
         "name": "GOTTSCHALL Mário",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "GOTTSCHALL Mário",
-        "Teamname": "",
         "player_id": "735714"
       },
       {
@@ -9110,8 +8548,6 @@
         "name": "GUEVARA Jose",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "GUEVARA Jose",
-        "Teamname": "",
         "player_id": "774653"
       },
       {
@@ -9131,8 +8567,6 @@
         "name": "HAJTMAR Adam",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "HAJTMAR Adam",
-        "Teamname": "",
         "player_id": "735296"
       },
       {
@@ -9152,8 +8586,6 @@
         "name": "HAJTMAR Jakub",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HAJTMAR Jakub",
-        "Teamname": "",
         "player_id": "733290"
       },
       {
@@ -9173,8 +8605,6 @@
         "name": "HANUŠ Mikuláš",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HANUŠ Mikuláš",
-        "Teamname": "",
         "player_id": "735686"
       },
       {
@@ -9194,8 +8624,6 @@
         "name": "HANUŠ šimon",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HANUŠ šimon",
-        "Teamname": "",
         "player_id": "735687"
       },
       {
@@ -9215,8 +8643,6 @@
         "name": "HANZAL šimon",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "HANZAL šimon",
-        "Teamname": "",
         "player_id": "732905"
       },
       {
@@ -9236,8 +8662,6 @@
         "name": "HARIG Marian",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "HARIG Marian",
-        "Teamname": "",
         "player_id": "735896"
       },
       {
@@ -9257,8 +8681,6 @@
         "name": "HASAL Matyáš",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HASAL Matyáš",
-        "Teamname": "",
         "player_id": "735688"
       },
       {
@@ -9278,8 +8700,6 @@
         "name": "HEDL Filip",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HEDL Filip",
-        "Teamname": "",
         "player_id": "735301"
       },
       {
@@ -9299,8 +8719,6 @@
         "name": "HEJNÝ Stanislav",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "HEJNÝ Stanislav",
-        "Teamname": "",
         "player_id": "732940"
       },
       {
@@ -9320,8 +8738,6 @@
         "name": "HELMICH Jan",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "HELMICH Jan",
-        "Teamname": "",
         "player_id": "739234"
       },
       {
@@ -9341,8 +8757,6 @@
         "name": "HEŘMAN David",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HEŘMAN David",
-        "Teamname": "",
         "player_id": "735302"
       },
       {
@@ -9362,8 +8776,6 @@
         "name": "HLOUCH Lukáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "HLOUCH Lukáš",
-        "Teamname": "",
         "player_id": "732927"
       },
       {
@@ -9383,8 +8795,6 @@
         "name": "HLUCHÝ Viktor",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "HLUCHÝ Viktor",
-        "Teamname": "",
         "player_id": "739235"
       },
       {
@@ -9404,8 +8814,6 @@
         "name": "HOJDA Jan",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "HOJDA Jan",
-        "Teamname": "",
         "player_id": "739236"
       },
       {
@@ -9425,8 +8833,6 @@
         "name": "HRDLIČKA Ondřej",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "HRDLIČKA Ondřej",
-        "Teamname": "",
         "player_id": "735689"
       },
       {
@@ -9446,8 +8852,6 @@
         "name": "HŘIB Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "HŘIB Martin",
-        "Teamname": "",
         "player_id": "735303"
       },
       {
@@ -9467,8 +8871,6 @@
         "name": "JACQUES Adam",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "JACQUES Adam",
-        "Teamname": "",
         "player_id": "732900"
       },
       {
@@ -9488,8 +8890,6 @@
         "name": "JOHNSON Ryan",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "JOHNSON Ryan",
-        "Teamname": "",
         "player_id": "737068"
       },
       {
@@ -9509,8 +8909,6 @@
         "name": "JOZEK Pavel",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "JOZEK Pavel",
-        "Teamname": "",
         "player_id": "732918"
       },
       {
@@ -9530,8 +8928,6 @@
         "name": "KALÁBEK Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "KALÁBEK Martin",
-        "Teamname": "",
         "player_id": "735304"
       },
       {
@@ -9551,8 +8947,6 @@
         "name": "KAVAN Kryštof",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "KAVAN Kryštof",
-        "Teamname": "",
         "player_id": "735690"
       },
       {
@@ -9572,8 +8966,6 @@
         "name": "KAŇOK Viktor",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KAŇOK Viktor",
-        "Teamname": "",
         "player_id": "735897"
       },
       {
@@ -9593,8 +8985,6 @@
         "name": "KLACL šimon",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "KLACL šimon",
-        "Teamname": "",
         "player_id": "735305"
       },
       {
@@ -9614,8 +9004,6 @@
         "name": "KLINER Jakub",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "KLINER Jakub",
-        "Teamname": "",
         "player_id": "732931"
       },
       {
@@ -9635,8 +9023,6 @@
         "name": "KOBERA Robert",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "KOBERA Robert",
-        "Teamname": "",
         "player_id": "739237"
       },
       {
@@ -9656,8 +9042,6 @@
         "name": "KOLEV Vasko",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "KOLEV Vasko",
-        "Teamname": "",
         "player_id": "739238"
       },
       {
@@ -9677,8 +9061,6 @@
         "name": "KOLLMANN Filip",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "KOLLMANN Filip",
-        "Teamname": "",
         "player_id": "732924"
       },
       {
@@ -9698,8 +9080,6 @@
         "name": "KONRÁD Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "KONRÁD Jan",
-        "Teamname": "",
         "player_id": "735716"
       },
       {
@@ -9719,8 +9099,6 @@
         "name": "KOZEL Jan",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KOZEL Jan",
-        "Teamname": "",
         "player_id": "735899"
       },
       {
@@ -9740,8 +9118,6 @@
         "name": "KOZEL Matyáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KOZEL Matyáš",
-        "Teamname": "",
         "player_id": "735898"
       },
       {
@@ -9761,8 +9137,6 @@
         "name": "KOŽÍŠEK Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "KOŽÍŠEK Jan",
-        "Teamname": "",
         "player_id": "766323"
       },
       {
@@ -9782,8 +9156,6 @@
         "name": "KREJČIŘÍK Marek",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "KREJČIŘÍK Marek",
-        "Teamname": "",
         "player_id": "732916"
       },
       {
@@ -9803,8 +9175,6 @@
         "name": "KRIŽAN Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KRIŽAN Jakub",
-        "Teamname": "",
         "player_id": "761205"
       },
       {
@@ -9824,8 +9194,6 @@
         "name": "KUBELKA Jan",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "KUBELKA Jan",
-        "Teamname": "",
         "player_id": "735306"
       },
       {
@@ -9845,8 +9213,6 @@
         "name": "KUBICA Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "KUBICA Jakub",
-        "Teamname": "",
         "player_id": "735900"
       },
       {
@@ -9866,8 +9232,6 @@
         "name": "KUBÍČEK Filip",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "KUBÍČEK Filip",
-        "Teamname": "",
         "player_id": "739239"
       },
       {
@@ -9887,8 +9251,6 @@
         "name": "KUKLÍK Vojtěch",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KUKLÍK Vojtěch",
-        "Teamname": "",
         "player_id": "735336"
       },
       {
@@ -9908,8 +9270,6 @@
         "name": "KUČERA Filip",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KUČERA Filip",
-        "Teamname": "",
         "player_id": "735335"
       },
       {
@@ -9929,8 +9289,6 @@
         "name": "KÄCK Albin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KÄCK Albin",
-        "Teamname": "",
         "player_id": "735331"
       },
       {
@@ -9950,8 +9308,6 @@
         "name": "KŘEČEK David",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "KŘEČEK David",
-        "Teamname": "",
         "player_id": "735334"
       },
       {
@@ -9971,8 +9327,6 @@
         "name": "LAVIČKA Filip",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "LAVIČKA Filip",
-        "Teamname": "",
         "player_id": "732954"
       },
       {
@@ -9992,8 +9346,6 @@
         "name": "LEMMON Alec",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "LEMMON Alec",
-        "Teamname": "",
         "player_id": "739293"
       },
       {
@@ -10013,8 +9365,6 @@
         "name": "LIMA Jose",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "LIMA Jose",
-        "Teamname": "",
         "player_id": "735367"
       },
       {
@@ -10034,8 +9384,6 @@
         "name": "LOPEZ Aliangel",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "LOPEZ Aliangel",
-        "Teamname": "",
         "player_id": "757327"
       },
       {
@@ -10055,8 +9403,6 @@
         "name": "LORENC Jan",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "LORENC Jan",
-        "Teamname": "",
         "player_id": "735337"
       },
       {
@@ -10076,8 +9422,6 @@
         "name": "LUKAVSKÝ Kryštof",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "LUKAVSKÝ Kryštof",
-        "Teamname": "",
         "player_id": "739242"
       },
       {
@@ -10097,8 +9441,6 @@
         "name": "LUKEŠ Max",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "LUKEŠ Max",
-        "Teamname": "",
         "player_id": "735338"
       },
       {
@@ -10118,8 +9460,6 @@
         "name": "MACHAČKA Zdeněk",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "MACHAČKA Zdeněk",
-        "Teamname": "",
         "player_id": "735717"
       },
       {
@@ -10139,8 +9479,6 @@
         "name": "MALCONIAN Matthew",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "MALCONIAN Matthew",
-        "Teamname": "",
         "player_id": "754576"
       },
       {
@@ -10160,8 +9498,6 @@
         "name": "MALÍK Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "MALÍK Jakub",
-        "Teamname": "",
         "player_id": "735902"
       },
       {
@@ -10181,8 +9517,6 @@
         "name": "MARTINEK Kryštof",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "MARTINEK Kryštof",
-        "Teamname": "",
         "player_id": "732911"
       },
       {
@@ -10202,8 +9536,6 @@
         "name": "MARTINČÁK Jonáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "MARTINČÁK Jonáš",
-        "Teamname": "",
         "player_id": "735903"
       },
       {
@@ -10223,8 +9555,6 @@
         "name": "MATUŠKA Adam",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "MATUŠKA Adam",
-        "Teamname": "",
         "player_id": "735339"
       },
       {
@@ -10244,8 +9574,6 @@
         "name": "MERGANS David",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "MERGANS David",
-        "Teamname": "",
         "player_id": "735718"
       },
       {
@@ -10265,8 +9593,6 @@
         "name": "MINAŘÍK Marek",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MINAŘÍK Marek",
-        "Teamname": "",
         "player_id": "732942"
       },
       {
@@ -10286,8 +9612,6 @@
         "name": "MIRANDA Camilo",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MIRANDA Camilo",
-        "Teamname": "",
         "player_id": "732943"
       },
       {
@@ -10307,8 +9631,6 @@
         "name": "MLÝNEK šimon",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MLÝNEK šimon",
-        "Teamname": "",
         "player_id": "732957"
       },
       {
@@ -10328,8 +9650,6 @@
         "name": "MONCADA Luis",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "MONCADA Luis",
-        "Teamname": "",
         "player_id": "733298"
       },
       {
@@ -10349,8 +9669,6 @@
         "name": "MONTEITH Philip",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MONTEITH Philip",
-        "Teamname": "",
         "player_id": "735356"
       },
       {
@@ -10370,8 +9688,6 @@
         "name": "MORAVEC Jaroslav",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "MORAVEC Jaroslav",
-        "Teamname": "",
         "player_id": "737070"
       },
       {
@@ -10391,8 +9707,6 @@
         "name": "MORGAN Benjamin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "MORGAN Benjamin",
-        "Teamname": "",
         "player_id": "735340"
       },
       {
@@ -10412,8 +9726,6 @@
         "name": "MRAKOVCIC Maxim",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "MRAKOVCIC Maxim",
-        "Teamname": "",
         "player_id": "761203"
       },
       {
@@ -10433,8 +9745,6 @@
         "name": "MULAČ Jan",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "MULAČ Jan",
-        "Teamname": "",
         "player_id": "739243"
       },
       {
@@ -10454,8 +9764,6 @@
         "name": "MUŽÍK Martin",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "MUŽÍK Martin",
-        "Teamname": "",
         "player_id": "732944"
       },
       {
@@ -10475,8 +9783,6 @@
         "name": "NAKAMURA Yodai",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NAKAMURA Yodai",
-        "Teamname": "",
         "player_id": "735721"
       },
       {
@@ -10496,8 +9802,6 @@
         "name": "NAVRÁTIL Ondřej",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "NAVRÁTIL Ondřej",
-        "Teamname": "",
         "player_id": "732912"
       },
       {
@@ -10517,8 +9821,6 @@
         "name": "NETOPILÍK Matěj",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "NETOPILÍK Matěj",
-        "Teamname": "",
         "player_id": "743090"
       },
       {
@@ -10538,8 +9840,6 @@
         "name": "NIKOLAIENKO Stanislav",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NIKOLAIENKO Stanislav",
-        "Teamname": "",
         "player_id": "735722"
       },
       {
@@ -10559,8 +9859,6 @@
         "name": "NOSEK Eduard",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NOSEK Eduard",
-        "Teamname": "",
         "player_id": "735723"
       },
       {
@@ -10580,8 +9878,6 @@
         "name": "NOVOTNÝ Matyáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "NOVOTNÝ Matyáš",
-        "Teamname": "",
         "player_id": "735904"
       },
       {
@@ -10601,8 +9897,6 @@
         "name": "NOVÁK Jan",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "NOVÁK Jan",
-        "Teamname": "",
         "player_id": "735341"
       },
       {
@@ -10622,8 +9916,6 @@
         "name": "NOVÁK Jan",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "NOVÁK Jan",
-        "Teamname": "",
         "player_id": "735724"
       },
       {
@@ -10643,8 +9935,6 @@
         "name": "NOVÝ Vítězslav",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "NOVÝ Vítězslav",
-        "Teamname": "",
         "player_id": "732903"
       },
       {
@@ -10664,8 +9954,6 @@
         "name": "NĚMEC Filip",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "NĚMEC Filip",
-        "Teamname": "",
         "player_id": "739244"
       },
       {
@@ -10685,8 +9973,6 @@
         "name": "NĚMČANSKÝ Matyáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "NĚMČANSKÝ Matyáš",
-        "Teamname": "",
         "player_id": "735368"
       },
       {
@@ -10706,8 +9992,6 @@
         "name": "NĚMČANSKÝ štěpán",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "NĚMČANSKÝ štěpán",
-        "Teamname": "",
         "player_id": "732913"
       },
       {
@@ -10727,8 +10011,6 @@
         "name": "OCHOA Roldan",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "OCHOA Roldan",
-        "Teamname": "",
         "player_id": "735357"
       },
       {
@@ -10748,8 +10030,6 @@
         "name": "OGINO Takashi",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "OGINO Takashi",
-        "Teamname": "",
         "player_id": "735294"
       },
       {
@@ -10769,8 +10049,6 @@
         "name": "OKÁČ Filip",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "OKÁČ Filip",
-        "Teamname": "",
         "player_id": "735307"
       },
       {
@@ -10790,8 +10068,6 @@
         "name": "ONDRA Tomáš",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ONDRA Tomáš",
-        "Teamname": "",
         "player_id": "735308"
       },
       {
@@ -10811,8 +10087,6 @@
         "name": "ONDROUŠEK Daniel",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "ONDROUŠEK Daniel",
-        "Teamname": "",
         "player_id": "732898"
       },
       {
@@ -10832,8 +10106,6 @@
         "name": "OŠMERA Adam",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "OŠMERA Adam",
-        "Teamname": "",
         "player_id": "735905"
       },
       {
@@ -10853,8 +10125,6 @@
         "name": "PACAL Lukáš",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "PACAL Lukáš",
-        "Teamname": "",
         "player_id": "737071"
       },
       {
@@ -10874,8 +10144,6 @@
         "name": "PEJCHAL Kamil",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "PEJCHAL Kamil",
-        "Teamname": "",
         "player_id": "732915"
       },
       {
@@ -10895,8 +10163,6 @@
         "name": "PERNIČKA Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "PERNIČKA Martin",
-        "Teamname": "",
         "player_id": "733294"
       },
       {
@@ -10916,8 +10182,6 @@
         "name": "PEROUTKA Pavel",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "PEROUTKA Pavel",
-        "Teamname": "",
         "player_id": "732925"
       },
       {
@@ -10937,8 +10201,6 @@
         "name": "PJONTEK Matyáš",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "PJONTEK Matyáš",
-        "Teamname": "",
         "player_id": "735906"
       },
       {
@@ -10958,8 +10220,6 @@
         "name": "PLACHÝ Tomáš",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PLACHÝ Tomáš",
-        "Teamname": "",
         "player_id": "735344"
       },
       {
@@ -10979,8 +10239,6 @@
         "name": "POKORNÝ Michal",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "POKORNÝ Michal",
-        "Teamname": "",
         "player_id": "732909"
       },
       {
@@ -11000,8 +10258,6 @@
         "name": "POSPÍŠIL Jan",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "POSPÍŠIL Jan",
-        "Teamname": "",
         "player_id": "732914"
       },
       {
@@ -11021,8 +10277,6 @@
         "name": "PRANDŽEV Aleš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "PRANDŽEV Aleš",
-        "Teamname": "",
         "player_id": "739245"
       },
       {
@@ -11042,8 +10296,6 @@
         "name": "PRAŽÁK Albert",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "PRAŽÁK Albert",
-        "Teamname": "",
         "player_id": "735359"
       },
       {
@@ -11063,8 +10315,6 @@
         "name": "PREJDA Max",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PREJDA Max",
-        "Teamname": "",
         "player_id": "735345"
       },
       {
@@ -11084,8 +10334,6 @@
         "name": "PROCHÁZKA Jonáš",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "PROCHÁZKA Jonáš",
-        "Teamname": "",
         "player_id": "741993"
       },
       {
@@ -11105,8 +10353,6 @@
         "name": "PROKOP Milan",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "PROKOP Milan",
-        "Teamname": "",
         "player_id": "735309"
       },
       {
@@ -11126,8 +10372,6 @@
         "name": "PRUDIL Adam",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "PRUDIL Adam",
-        "Teamname": "",
         "player_id": "735310"
       },
       {
@@ -11147,8 +10391,6 @@
         "name": "PRŮCHA Samuel",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PRŮCHA Samuel",
-        "Teamname": "",
         "player_id": "735346"
       },
       {
@@ -11168,8 +10410,6 @@
         "name": "PUŠ Jáchym",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "PUŠ Jáchym",
-        "Teamname": "",
         "player_id": "735347"
       },
       {
@@ -11189,8 +10429,6 @@
         "name": "RIVAS Raul",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "RIVAS Raul",
-        "Teamname": "",
         "player_id": "735369"
       },
       {
@@ -11210,8 +10448,6 @@
         "name": "RŮŽIČKA Benedikt",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "RŮŽIČKA Benedikt",
-        "Teamname": "",
         "player_id": "732935"
       },
       {
@@ -11231,8 +10467,6 @@
         "name": "SAMSON Maxim",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SAMSON Maxim",
-        "Teamname": "",
         "player_id": "732939"
       },
       {
@@ -11252,8 +10486,6 @@
         "name": "SATORIA Ondřej",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "SATORIA Ondřej",
-        "Teamname": "",
         "player_id": "735907"
       },
       {
@@ -11273,8 +10505,6 @@
         "name": "SCHWARZINGER Mathias",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "SCHWARZINGER Mathias",
-        "Teamname": "",
         "player_id": "732907"
       },
       {
@@ -11294,8 +10524,6 @@
         "name": "SKOPAL Robin",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "SKOPAL Robin",
-        "Teamname": "",
         "player_id": "732908"
       },
       {
@@ -11315,8 +10543,6 @@
         "name": "SKÁLA Adam",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SKÁLA Adam",
-        "Teamname": "",
         "player_id": "732922"
       },
       {
@@ -11336,8 +10562,6 @@
         "name": "SLABÝ Marek",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "SLABÝ Marek",
-        "Teamname": "",
         "player_id": "739246"
       },
       {
@@ -11357,8 +10581,6 @@
         "name": "SLAPNIČKA Marek",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "SLAPNIČKA Marek",
-        "Teamname": "",
         "player_id": "735910"
       },
       {
@@ -11378,8 +10600,6 @@
         "name": "SMEJKAL Lukáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "SMEJKAL Lukáš",
-        "Teamname": "",
         "player_id": "732920"
       },
       {
@@ -11399,8 +10619,6 @@
         "name": "SMITH Brandon",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "SMITH Brandon",
-        "Teamname": "",
         "player_id": "735911"
       },
       {
@@ -11420,8 +10638,6 @@
         "name": "SMOLA Matyáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "SMOLA Matyáš",
-        "Teamname": "",
         "player_id": "739247"
       },
       {
@@ -11441,8 +10657,6 @@
         "name": "SOBOTKA Daniel",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "SOBOTKA Daniel",
-        "Teamname": "",
         "player_id": "732910"
       },
       {
@@ -11462,8 +10676,6 @@
         "name": "SOBOTKA Martin",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "SOBOTKA Martin",
-        "Teamname": "",
         "player_id": "735729"
       },
       {
@@ -11483,8 +10695,6 @@
         "name": "STANĚK Antonín",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "STANĚK Antonín",
-        "Teamname": "",
         "player_id": "735731"
       },
       {
@@ -11504,8 +10714,6 @@
         "name": "STANĚK Vít",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "STANĚK Vít",
-        "Teamname": "",
         "player_id": "738506"
       },
       {
@@ -11525,8 +10733,6 @@
         "name": "TAKEDA Matias",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "TAKEDA Matias",
-        "Teamname": "",
         "player_id": "733297"
       },
       {
@@ -11546,8 +10752,6 @@
         "name": "TAKIGUCHI Yutaro",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "TAKIGUCHI Yutaro",
-        "Teamname": "",
         "player_id": "757492"
       },
       {
@@ -11567,8 +10771,6 @@
         "name": "TAMBA Natsuki",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "TAMBA Natsuki",
-        "Teamname": "",
         "player_id": "739241"
       },
       {
@@ -11588,8 +10790,6 @@
         "name": "TOŠOVSKÝ Adam",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "TOŠOVSKÝ Adam",
-        "Teamname": "",
         "player_id": "739248"
       },
       {
@@ -11609,8 +10809,6 @@
         "name": "TRENDL Ondřej",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "TRENDL Ondřej",
-        "Teamname": "",
         "player_id": "735370"
       },
       {
@@ -11630,8 +10828,6 @@
         "name": "TRUNKÁT Lukáš",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "TRUNKÁT Lukáš",
-        "Teamname": "",
         "player_id": "732899"
       },
       {
@@ -11651,8 +10847,6 @@
         "name": "TRČKA Matyáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "TRČKA Matyáš",
-        "Teamname": "",
         "player_id": "735360"
       },
       {
@@ -11672,8 +10866,6 @@
         "name": "TUČEK šimon",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "TUČEK šimon",
-        "Teamname": "",
         "player_id": "735351"
       },
       {
@@ -11693,8 +10885,6 @@
         "name": "UEMURA Koya",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "UEMURA Koya",
-        "Teamname": "",
         "player_id": "738584"
       },
       {
@@ -11714,8 +10904,6 @@
         "name": "UGUSA Koki",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "UGUSA Koki",
-        "Teamname": "",
         "player_id": "735352"
       },
       {
@@ -11735,8 +10923,6 @@
         "name": "URBÁNEK Jan",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "URBÁNEK Jan",
-        "Teamname": "",
         "player_id": "732919"
       },
       {
@@ -11756,8 +10942,6 @@
         "name": "URBÁNEK Lukáš",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "URBÁNEK Lukáš",
-        "Teamname": "",
         "player_id": "735312"
       },
       {
@@ -11777,8 +10961,6 @@
         "name": "VANK Ondřej",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VANK Ondřej",
-        "Teamname": "",
         "player_id": "765842"
       },
       {
@@ -11798,8 +10980,6 @@
         "name": "VANČURA Matyáš",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VANČURA Matyáš",
-        "Teamname": "",
         "player_id": "735361"
       },
       {
@@ -11819,8 +10999,6 @@
         "name": "VANČURA Vilém",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VANČURA Vilém",
-        "Teamname": "",
         "player_id": "735353"
       },
       {
@@ -11840,8 +11018,6 @@
         "name": "VAŠOUREK Jan",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VAŠOUREK Jan",
-        "Teamname": "",
         "player_id": "733292"
       },
       {
@@ -11861,8 +11037,6 @@
         "name": "VELETA Antonín",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "VELETA Antonín",
-        "Teamname": "",
         "player_id": "735734"
       },
       {
@@ -11882,8 +11056,6 @@
         "name": "VELETA štěpán",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "VELETA štěpán",
-        "Teamname": "",
         "player_id": "735735"
       },
       {
@@ -11903,8 +11075,6 @@
         "name": "VELÁZQUEZ Vicente",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VELÁZQUEZ Vicente",
-        "Teamname": "",
         "player_id": "743194"
       },
       {
@@ -11924,8 +11094,6 @@
         "name": "VENHODA Tomáš",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "VENHODA Tomáš",
-        "Teamname": "",
         "player_id": "732933"
       },
       {
@@ -11945,8 +11113,6 @@
         "name": "VENTRUBA Vojtěch",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VENTRUBA Vojtěch",
-        "Teamname": "",
         "player_id": "733296"
       },
       {
@@ -11966,8 +11132,6 @@
         "name": "VENTRUBA Vít",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VENTRUBA Vít",
-        "Teamname": "",
         "player_id": "735314"
       },
       {
@@ -11987,8 +11151,6 @@
         "name": "VESELÝ Adam",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "VESELÝ Adam",
-        "Teamname": "",
         "player_id": "732921"
       },
       {
@@ -12008,8 +11170,6 @@
         "name": "VEČERKA Boris",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "VEČERKA Boris",
-        "Teamname": "",
         "player_id": "743211"
       },
       {
@@ -12029,8 +11189,6 @@
         "name": "VEČERKA Viktor",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "VEČERKA Viktor",
-        "Teamname": "",
         "player_id": "735313"
       },
       {
@@ -12050,8 +11208,6 @@
         "name": "VLACH Matěj",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VLACH Matěj",
-        "Teamname": "",
         "player_id": "732948"
       },
       {
@@ -12071,8 +11227,6 @@
         "name": "VLACH Vojtěch",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VLACH Vojtěch",
-        "Teamname": "",
         "player_id": "732947"
       },
       {
@@ -12092,8 +11246,6 @@
         "name": "VOSTATEK Ondřej",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "VOSTATEK Ondřej",
-        "Teamname": "",
         "player_id": "735354"
       },
       {
@@ -12113,8 +11265,6 @@
         "name": "VRÁBEL Milan",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "VRÁBEL Milan",
-        "Teamname": "",
         "player_id": "732958"
       },
       {
@@ -12134,8 +11284,6 @@
         "name": "VYKOUKAL Michael",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "VYKOUKAL Michael",
-        "Teamname": "",
         "player_id": "735913"
       },
       {
@@ -12155,8 +11303,6 @@
         "name": "VŠETEČKA šimon",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "VŠETEČKA šimon",
-        "Teamname": "",
         "player_id": "735912"
       },
       {
@@ -12176,8 +11322,6 @@
         "name": "WEINZIMER Marcus",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "WEINZIMER Marcus",
-        "Teamname": "",
         "player_id": "735362"
       },
       {
@@ -12197,8 +11341,6 @@
         "name": "WINKLER Jakub",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "WINKLER Jakub",
-        "Teamname": "",
         "player_id": "735315"
       },
       {
@@ -12218,8 +11360,6 @@
         "name": "ZAVADIL Tadeáš",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ZAVADIL Tadeáš",
-        "Teamname": "",
         "player_id": "739249"
       },
       {
@@ -12239,8 +11379,6 @@
         "name": "ZELENKA Martin",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "ZELENKA Martin",
-        "Teamname": "",
         "player_id": "735363"
       },
       {
@@ -12260,8 +11398,6 @@
         "name": "ZELENKA Michal",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "ZELENKA Michal",
-        "Teamname": "",
         "player_id": "763308"
       },
       {
@@ -12281,8 +11417,6 @@
         "name": "ZÝMA Petr",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ZÝMA Petr",
-        "Teamname": "",
         "player_id": "738585"
       },
       {
@@ -12302,8 +11436,6 @@
         "name": "ČAPKA Filip",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ČAPKA Filip",
-        "Teamname": "",
         "player_id": "733293"
       },
       {
@@ -12323,8 +11455,6 @@
         "name": "ČAPKA Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ČAPKA Martin",
-        "Teamname": "",
         "player_id": "735298"
       },
       {
@@ -12344,8 +11474,6 @@
         "name": "ČERNÝ Daniel",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "ČERNÝ Daniel",
-        "Teamname": "",
         "player_id": "735895"
       },
       {
@@ -12365,8 +11493,6 @@
         "name": "ČERVENKA Martin",
         "teamcode": "KOT",
         "teamid": 43154,
-        "Player": "ČERVENKA Martin",
-        "Teamname": "",
         "player_id": "735319"
       },
       {
@@ -12386,8 +11512,6 @@
         "name": "ČERVINKA Martin",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ČERVINKA Martin",
-        "Teamname": "",
         "player_id": "735299"
       },
       {
@@ -12407,8 +11531,6 @@
         "name": "ŘÍČNÝ Tomáš",
         "teamcode": "HRO",
         "teamid": 43158,
-        "Player": "ŘÍČNÝ Tomáš",
-        "Teamname": "",
         "player_id": "732901"
       },
       {
@@ -12428,8 +11550,6 @@
         "name": "ŠABACKÝ Vojtěch",
         "teamcode": "NUC",
         "teamid": 43153,
-        "Player": "ŠABACKÝ Vojtěch",
-        "Teamname": "",
         "player_id": "732930"
       },
       {
@@ -12449,8 +11569,6 @@
         "name": "ŠINDELKA Michal",
         "teamcode": "DRA",
         "teamid": 43156,
-        "Player": "ŠINDELKA Michal",
-        "Teamname": "",
         "player_id": "735311"
       },
       {
@@ -12470,8 +11588,6 @@
         "name": "ŠINDLER Filip",
         "teamcode": "EAG",
         "teamid": 43159,
-        "Player": "ŠINDLER Filip",
-        "Teamname": "",
         "player_id": "761202"
       },
       {
@@ -12491,8 +11607,6 @@
         "name": "ŠKOPEK David",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "ŠKOPEK David",
-        "Teamname": "",
         "player_id": "735728"
       },
       {
@@ -12512,8 +11626,6 @@
         "name": "ŠPIMR Matěj",
         "teamcode": "SAB",
         "teamid": 43157,
-        "Player": "ŠPIMR Matěj",
-        "Teamname": "",
         "player_id": "735730"
       },
       {
@@ -12533,8 +11645,6 @@
         "name": "ŠÍN Alexandr",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "ŠÍN Alexandr",
-        "Teamname": "",
         "player_id": "735908"
       },
       {
@@ -12554,8 +11664,6 @@
         "name": "ŠÍN Jakub",
         "teamcode": "ARR",
         "teamid": 43160,
-        "Player": "ŠÍN Jakub",
-        "Teamname": "",
         "player_id": "735909"
       },
       {
@@ -12575,14 +11683,12 @@
         "name": "ŽUPANYN Vasyl",
         "teamcode": "HLU",
         "teamid": 43155,
-        "Player": "ŽUPANYN Vasyl",
-        "Teamname": "",
         "player_id": "732946"
       }
     ],
     "headers": [
       {
-        "column": "Player",
+        "column": "name",
         "label": "Player"
       },
       {
