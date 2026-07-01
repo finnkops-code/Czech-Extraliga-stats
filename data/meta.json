@@ -1,8 +1,8 @@
 {
-  "last_updated": "2026-07-01T12:57:42.778137+00:00",
+  "last_updated": "2026-07-01T13:37:05.624238+00:00",
   "source": "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026/index",
   "season": "Extraliga 2026",
-  "round": "6792",
+  "round": "alle ronden",
   "player_counts": {},
   "api_params": {
     "stat_sections": [
