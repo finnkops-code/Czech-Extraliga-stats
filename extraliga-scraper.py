@@ -148,28 +148,6 @@ def scrape_per_team():
         json.dump(team_index, f, ensure_ascii=False, indent=2)
 
 
-def scrape_splits():
-    print("🔀 Scraping splits…")
-    interesting_splits = [
-        ("last3", "Last 3 Games"),
-        ("last5", "Last 5 Games"),
-        ("last7", "Last 7 Games"),
-        ("home",  "Home games"),
-        ("away",  "Away games"),
-    ]
-    splits_data = {}
-
-    for split_val, split_label in interesting_splits:
-        result = scrape_section("batting", split=split_val)
-        if result:
-            splits_data[split_val] = {"label": split_label, **result}
-        time.sleep(0.4)
-
-    with open(f"{DATA}/splits.json", "w", encoding="utf-8") as f:
-        json.dump(splits_data, f, ensure_ascii=False, indent=2)
-    print(f"  ✅ splits.json ({len(splits_data)} splits)")
-
-
 def scrape_standings():
     print("🏆 Scraping standings…")
     url = f"https://stats.baseball.cz/api/v1/events/extraliga-2026/standings"
@@ -204,8 +182,11 @@ def main():
     print(f"\n🚀 Czech Extraliga Stats Scraper — {datetime.now(timezone.utc):%Y-%m-%d %H:%M UTC}\n")
     stats = scrape_all_stats()
     scrape_per_team()
-    scrape_splits()
     scrape_standings()
+    # Schrijf lege splits (API niet toegankelijk)
+    import os
+    with open(f"{DATA}/splits.json", "w") as f:
+        import json as _j; _j.dump({}, f)
     write_meta(stats)
     print("\n✅ Klaar! Alle data staat in /data/\n")
 
