@@ -16,7 +16,7 @@ BASE = "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026"
 DATA = "data"
 os.makedirs(DATA, exist_ok=True)
 
-HEADERS = {
+HEADERS_REQ = {
     "Accept":     "application/json",
     "Referer":    "https://stats.baseball.cz/en/events/extraliga-2026/stats",
     "User-Agent": "Mozilla/5.0 (compatible; ExtraligaBot/2.0)",
@@ -33,24 +33,26 @@ TEAMS = {
     "SaBaT":    "43157",
 }
 
-ROUND = "6792"  # Základní část
-
-SPLITS = [
-    "", "last3", "last5", "last7", "home", "away",
-    "day", "night",
-    "0outs", "1out", "2outs",
-    "vsleft", "vsright",
-    "empty", "runner1", "runner2", "runner3",
-    "runners12", "runners13", "runners23", "loaded",
-    "scoring", "behind", "ahead",
-]
+# round= parameter weglaten → haalt volledige seizoensdata op
+ROUND = ""
 
 STAT_SECTIONS = ["batting", "pitching", "fielding"]
 
 
 def clean_name(html: str) -> str:
-    text = re.sub(r"<[^>]+>", " ", html)
-    return " ".join(text.split()).strip()
+    """
+    Strip HTML-tags uit naamveld.
+    API geeft nu: <span class="lastname">ALVAREZ</span><br><span class="firstname">Roberto</span>
+    Resultaat: "ALVAREZ Roberto"
+    """
+    # Haal lastname en firstname op
+    last  = re.search(r'class="lastname"[^>]*>(.*?)</span>', html)
+    first = re.search(r'class="firstname"[^>]*>(.*?)</span>', html)
+    if last and first:
+        return f"{last.group(1)} {first.group(1)}"
+    # Fallback: strip alle tags
+    text = re.sub(r'<[^>]+>', ' ', html)
+    return ' '.join(text.split()).strip()
 
 
 def fetch(url: str, params: dict = None) -> dict | None:
@@ -58,7 +60,7 @@ def fetch(url: str, params: dict = None) -> dict | None:
         url = url + "?" + urllib.parse.urlencode(params)
     for attempt in range(3):
         try:
-            req = urllib.request.Request(url, headers=HEADERS)
+            req = urllib.request.Request(url, headers=HEADERS_REQ)
             with urllib.request.urlopen(req, timeout=20) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except Exception as e:
@@ -86,14 +88,13 @@ def annotate_headers(headers: list) -> list:
     return headers
 
 
-def scrape_section(section: str, team: str = "", split: str = "",
-                   round_: str = ROUND) -> dict | None:
+def scrape_section(section: str, team: str = "", round_: str = ROUND) -> dict | None:
     params = {
         "section":       "players",
         "stats-section": section,
         "team":          team,
         "round":         round_,
-        "split":         split,
+        "split":         "",
         "language":      "en",
     }
     result = fetch(f"{BASE}/index", params)
@@ -106,19 +107,19 @@ def scrape_section(section: str, team: str = "", split: str = "",
 
 
 def scrape_all_stats():
-    print("📊 Scraping stats (alle teams, alle secties)…")
+    print("📊 Scraping stats (alle secties)…")
     all_stats = {}
-
     for section in STAT_SECTIONS:
         print(f"  ↳ {section}…")
         result = scrape_section(section)
         if result:
             all_stats[section] = result
+            print(f"     {len(result['data'])} spelers")
         time.sleep(0.5)
 
     with open(f"{DATA}/stats.json", "w", encoding="utf-8") as f:
         json.dump(all_stats, f, ensure_ascii=False, indent=2)
-    print(f"  ✅ stats.json ({sum(len(v['data']) for v in all_stats.values())} rijen)")
+    print(f"  ✅ stats.json")
     return all_stats
 
 
@@ -173,14 +174,11 @@ def scrape_standings():
     print("🏆 Scraping standings…")
     url = f"https://stats.baseball.cz/api/v1/events/extraliga-2026/standings"
     result = fetch(url)
-    if not result:
-        result = fetch(f"{BASE}/standings")
     if result:
         with open(f"{DATA}/standings.json", "w", encoding="utf-8") as f:
             json.dump(result, f, ensure_ascii=False, indent=2)
         print("  ✅ standings.json")
     else:
-        print("  ⚠ Standings niet beschikbaar via API")
         with open(f"{DATA}/standings.json", "w") as f:
             json.dump({}, f)
 
@@ -190,7 +188,7 @@ def write_meta(stats: dict):
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "source":       f"{BASE}/index",
         "season":       "Extraliga 2026",
-        "round":        ROUND,
+        "round":        ROUND or "alle ronden",
         "player_counts": {s: len(v["data"]) for s, v in stats.items()},
         "api_params": {
             "stat_sections": STAT_SECTIONS,
