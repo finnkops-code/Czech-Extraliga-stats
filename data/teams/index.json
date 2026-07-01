@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Hroši",
+    "id": "43158",
+    "file": "teams/hro_i.json"
+  },
+  {
+    "name": "Kotlářka",
+    "id": "43154",
+    "file": "teams/kotl_ka.json"
+  },
+  {
+    "name": "Draci",
+    "id": "43156",
+    "file": "teams/draci.json"
+  },
+  {
+    "name": "Hluboká",
+    "id": "43155",
+    "file": "teams/hlubok.json"
+  },
+  {
+    "name": "Nuclears",
+    "id": "43153",
+    "file": "teams/nuclears.json"
+  },
+  {
+    "name": "Eagles",
+    "id": "43159",
+    "file": "teams/eagles.json"
+  },
+  {
+    "name": "Arrows",
+    "id": "43160",
+    "file": "teams/arrows.json"
+  },
+  {
+    "name": "SaBaT",
+    "id": "43157",
+    "file": "teams/sabat.json"
+  }
+]
