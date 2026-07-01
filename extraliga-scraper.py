@@ -33,26 +33,14 @@ TEAMS = {
     "SaBaT":    "43157",
 }
 
-# round= parameter weglaten → haalt volledige seizoensdata op
-ROUND = ""
+ROUND = ""  # Leeg = volledige seizoensdata, ongeacht actieve ronde
 
 STAT_SECTIONS = ["batting", "pitching", "fielding"]
 
 
 def clean_name(html: str) -> str:
-    """
-    Strip HTML-tags uit naamveld.
-    API geeft nu: <span class="lastname">ALVAREZ</span><br><span class="firstname">Roberto</span>
-    Resultaat: "ALVAREZ Roberto"
-    """
-    # Haal lastname en firstname op
-    last  = re.search(r'class="lastname"[^>]*>(.*?)</span>', html)
-    first = re.search(r'class="firstname"[^>]*>(.*?)</span>', html)
-    if last and first:
-        return f"{last.group(1)} {first.group(1)}"
-    # Fallback: strip alle tags
-    text = re.sub(r'<[^>]+>', ' ', html)
-    return ' '.join(text.split()).strip()
+    text = re.sub(r"<[^>]+>", " ", html)
+    return " ".join(text.split()).strip()
 
 
 def fetch(url: str, params: dict = None) -> dict | None:
@@ -88,12 +76,12 @@ def annotate_headers(headers: list) -> list:
     return headers
 
 
-def scrape_section(section: str, team: str = "", round_: str = ROUND) -> dict | None:
+def scrape_section(section: str, team: str = "") -> dict | None:
     params = {
         "section":       "players",
         "stats-section": section,
         "team":          team,
-        "round":         round_,
+        "round":         ROUND,
         "split":         "",
         "language":      "en",
     }
@@ -148,25 +136,11 @@ def scrape_per_team():
         json.dump(team_index, f, ensure_ascii=False, indent=2)
 
 
-def scrape_standings():
-    print("🏆 Scraping standings…")
-    url = f"https://stats.baseball.cz/api/v1/events/extraliga-2026/standings"
-    result = fetch(url)
-    if result:
-        with open(f"{DATA}/standings.json", "w", encoding="utf-8") as f:
-            json.dump(result, f, ensure_ascii=False, indent=2)
-        print("  ✅ standings.json")
-    else:
-        with open(f"{DATA}/standings.json", "w") as f:
-            json.dump({}, f)
-
-
 def write_meta(stats: dict):
     meta = {
         "last_updated": datetime.now(timezone.utc).isoformat(),
         "source":       f"{BASE}/index",
         "season":       "Extraliga 2026",
-        "round":        ROUND or "alle ronden",
         "player_counts": {s: len(v["data"]) for s, v in stats.items()},
         "api_params": {
             "stat_sections": STAT_SECTIONS,
@@ -182,11 +156,6 @@ def main():
     print(f"\n🚀 Czech Extraliga Stats Scraper — {datetime.now(timezone.utc):%Y-%m-%d %H:%M UTC}\n")
     stats = scrape_all_stats()
     scrape_per_team()
-    scrape_standings()
-    # Schrijf lege splits (API niet toegankelijk)
-    import os
-    with open(f"{DATA}/splits.json", "w") as f:
-        import json as _j; _j.dump({}, f)
     write_meta(stats)
     print("\n✅ Klaar! Alle data staat in /data/\n")
 
