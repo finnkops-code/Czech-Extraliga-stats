@@ -1,37 +1,48 @@
-name: Czech Extraliga Stats Scraper
+name: Update Extraliga stats
 
 on:
   schedule:
-    - cron: '0 6 * * *'    # dagelijks 06:00 UTC
-    - cron: '0 14 * * 5'   # vrijdag 14:00 UTC (na avondwedstrijden)
-    - cron: '0 14 * * 6'   # zaterdag 14:00 UTC
-    - cron: '0 18 * * 6'   # zaterdag 18:00 UTC
-    - cron: '0 14 * * 0'   # zondag 14:00 UTC
-  workflow_dispatch:
+    # Elke 3 uur tussen 06:00 en 23:00 UTC (wedstrijddagen + updates)
+    - cron: "0 6-23/3 * * *"
+  workflow_dispatch: {}   # handmatig starten via de Actions-tab
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-stats
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Python instellen
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.12"
 
-      - name: Stats scrapen
-        run: python extraliga-scraper.py
+      - name: Installeer dependencies
+        run: pip install requests
 
-      - name: JSON committen
+      - name: Draai scraper
+        run: python scraper.py
+
+      - name: Commit & push bij wijzigingen
         run: |
-          git config user.name  "github-actions[bot]"
+          git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          git diff --staged --quiet || git commit -m "Extraliga stats bijgewerkt: $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          git add data/stats.json data/splits.json data/meta.json
+          # Alleen committen als stats.json of splits.json inhoudelijk wijzigde
+          # (meta.json verandert elke run door de timestamp)
+          if git diff --cached --quiet -- data/stats.json data/splits.json; then
+            echo "Geen inhoudelijke wijzigingen — geen commit."
+          else
+            git commit -m "Update Extraliga stats ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            git push
+          fi
