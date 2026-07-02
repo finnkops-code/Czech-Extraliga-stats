@@ -26,7 +26,7 @@ jobs:
           python-version: '3.11'
 
       - name: Stats scrapen
-        run: python scraper_stats.py
+        run: python extraliga-scraper.py
 
       - name: JSON committen
         run: |
