@@ -9,15 +9,20 @@ JSON-API van stats.baseball.cz en schrijft ze weg als:
     data/splits.json  → {} (placeholder, PHP laadt dit bestand wel)
     data/meta.json    → { last_updated, event, round, counts }
 
-Dit formaat sluit 1-op-1 aan op de [extraliga_stats] WordPress-shortcode.
+Strategie (i.v.m. 403 bot-detectie op GitHub Actions runners):
+  1. Eerst een snelle poging met `requests` + volledige browser-headers.
+  2. Bij 403: Playwright-fallback. De stats-pagina wordt in headless Chromium
+     geladen (lost eventuele Cloudflare/JS-challenge op) en de API-calls
+     worden daarna VANUIT de browsercontext gedaan via window.fetch — dus met
+     echte browser-TLS-fingerprint, cookies en headers.
 
-Let op: de URL wordt opgebouwd via een params-dict, dus GEEN dubbele
-team=/round=/split= parameters (de bug die eerder in de request-URL's zat).
+De URL wordt opgebouwd via een params-dict → geen dubbele parameters.
 """
 
 import json
 import re
 import sys
+import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -28,29 +33,57 @@ import requests
 # ---------------------------------------------------------------------------
 
 EVENT      = "extraliga-2026"
-ROUND      = "6792"          # ronde-id uit de request-URL's
+ROUND      = "6792"          # ronde-id uit de request-URL's (seizoensgebonden!)
 LANGUAGE   = "en"
 BASE_URL   = f"https://stats.baseball.cz/api/v1/stats/events/{EVENT}/index"
+STATS_PAGE = f"https://stats.baseball.cz/en/events/{EVENT}/stats"
 OUTPUT_DIR = Path(__file__).parent / "data"
 
 SECTIES = ["batting", "pitching", "fielding"]
 
 # Kwalificatiedrempels voor de "Top 10" sortering (overzicht-tab in de PHP).
-# Gekwalificeerde spelers komen bovenaan, de rest daaronder.
 MIN_AB = 40    # batting: minimaal aantal at-bats
 MIN_IP = 15.0  # pitching: minimaal aantal innings pitched
 MIN_C  = 20    # fielding: minimaal aantal chances
 
-HEADERS_HTTP = {
-    "User-Agent": "Mozilla/5.0 (compatible; ExtraligaStatsBot/1.0; +https://worldbaseballnews.org)",
-    "Accept": "application/json",
-    "Referer": f"https://stats.baseball.cz/en/events/{EVENT}/stats",
+# Volledige browser-headers — geen bot-UA, die triggerde de 403
+BROWSER_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+    ),
+    "Accept": "application/json, text/plain, */*",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Referer": STATS_PAGE,
+    "X-Requested-With": "XMLHttpRequest",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
 }
 
 TIMEOUT = 30
 
+
 # ---------------------------------------------------------------------------
-# Helpers
+# URL-opbouw (schoon, zonder duplicaten)
+# ---------------------------------------------------------------------------
+
+def bouw_url(sectie: str) -> str:
+    params = {
+        "section": "players",
+        "stats-section": sectie,
+        "team": "",
+        "round": ROUND,
+        "language": LANGUAGE,
+    }
+    # 'split' hoort alleen bij batting/pitching (fielding-URL heeft die param niet)
+    if sectie in ("batting", "pitching"):
+        params["split"] = ""
+    return BASE_URL + "?" + urllib.parse.urlencode(params)
+
+
+# ---------------------------------------------------------------------------
+# Naam opschonen
 # ---------------------------------------------------------------------------
 
 _NAAM_RE = re.compile(
@@ -62,8 +95,8 @@ _NAAM_RE = re.compile(
 
 def schoon_naam(raw: str) -> str:
     """
-    Zet '<span class="lastname">ALVAREZ</span><br><span class="firstname">Roberto</span>'
-    om naar 'Roberto Alvarez'. Valt terug op het strippen van alle HTML.
+    '<span class="lastname">ALVAREZ</span><br><span class="firstname">Roberto</span>'
+    → 'Roberto Alvarez'. Valt terug op het strippen van alle HTML.
     """
     if not raw:
         return ""
@@ -71,18 +104,15 @@ def schoon_naam(raw: str) -> str:
     if m:
         last = m.group("last").strip()
         first = m.group("first").strip()
-        # Achternaam komt in CAPS binnen → nette titlecase (werkt ook met č/ř/á etc.)
         last = " ".join(w.capitalize() if w.isupper() else w for w in last.split())
         first = " ".join(w.capitalize() if w.islower() or w.isupper() else w for w in first.split())
         return f"{first} {last}".strip()
-    # Fallback: strip alle tags
     txt = re.sub(r"<br\s*/?>", " ", raw)
     txt = re.sub(r"<[^>]+>", "", txt)
     return " ".join(txt.split())
 
 
 def naar_float(val):
-    """Zet '3.00', '15.2' (IP), 982 etc. veilig om naar float; None bij mislukking."""
     if val is None or val == "":
         return None
     try:
@@ -91,35 +121,75 @@ def naar_float(val):
         return None
 
 
-def haal_sectie(sessie: requests.Session, sectie: str) -> dict:
-    """
-    Haalt één stats-sectie op. Params via dict → gegarandeerd geen duplicaten.
-    Retourneert {"data": [...], "headers": [...]}.
-    """
-    params = {
-        "section": "players",
-        "stats-section": sectie,
-        "team": "",
-        "round": ROUND,
-        "language": LANGUAGE,
-    }
-    # 'split' hoort alleen bij batting/pitching (fielding-URL heeft die param niet)
-    if sectie in ("batting", "pitching"):
-        params["split"] = ""
-
-    resp = sessie.get(BASE_URL, params=params, headers=HEADERS_HTTP, timeout=TIMEOUT)
-    resp.raise_for_status()
-    payload = resp.json()
-
+def verwerk_payload(payload: dict) -> dict:
+    """Normaliseert een API-antwoord naar {"data": [...], "headers": [...]}."""
     data = payload.get("data") or []
     headers = payload.get("headers") or []
-
-    # Namen opschonen zodat de PHP ze direct kan tonen
     for rij in data:
         if "name" in rij:
             rij["name"] = schoon_naam(str(rij["name"]))
-
     return {"data": data, "headers": headers}
+
+
+# ---------------------------------------------------------------------------
+# Strategie 1: requests met browser-headers
+# ---------------------------------------------------------------------------
+
+def haal_via_requests(sessie: requests.Session, sectie: str) -> dict:
+    resp = sessie.get(bouw_url(sectie), headers=BROWSER_HEADERS, timeout=TIMEOUT)
+    resp.raise_for_status()
+    return verwerk_payload(resp.json())
+
+
+# ---------------------------------------------------------------------------
+# Strategie 2: Playwright-fallback (fetch vanuit de browsercontext)
+# ---------------------------------------------------------------------------
+
+def haal_alles_via_playwright() -> dict:
+    """
+    Laadt de stats-pagina in headless Chromium en haalt daarna alle secties
+    op via window.fetch binnen de pagina. Retourneert {sectie: {data, headers}}.
+    """
+    from playwright.sync_api import sync_playwright
+
+    resultaat = {}
+    with sync_playwright() as p:
+        browser = p.chromium.launch(
+            headless=True,
+            args=["--disable-blink-features=AutomationControlled"],
+        )
+        context = browser.new_context(
+            user_agent=BROWSER_HEADERS["User-Agent"],
+            locale="en-US",
+            viewport={"width": 1366, "height": 900},
+        )
+        page = context.new_page()
+
+        print("  Playwright: stats-pagina laden (JS-challenge)…", flush=True)
+        page.goto(STATS_PAGE, wait_until="domcontentloaded", timeout=60_000)
+        # Even wachten zodat een eventuele challenge/cookies kan afronden
+        page.wait_for_timeout(4_000)
+
+        for sectie in SECTIES:
+            url = bouw_url(sectie)
+            print(f"  Playwright fetch: {sectie} …", flush=True)
+            payload = page.evaluate(
+                """async (url) => {
+                    const r = await fetch(url, {
+                        headers: { 'Accept': 'application/json',
+                                   'X-Requested-With': 'XMLHttpRequest' },
+                        credentials: 'same-origin'
+                    });
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return await r.json();
+                }""",
+                url,
+            )
+            resultaat[sectie] = verwerk_payload(payload)
+            print(f"  ✓ {sectie}: {len(resultaat[sectie]['data'])} spelers")
+
+        browser.close()
+    return resultaat
 
 
 # ---------------------------------------------------------------------------
@@ -130,8 +200,7 @@ def sorteer_batting(rijen: list) -> list:
     def key(r):
         ab = naar_float(r.get("ab")) or 0
         avg = naar_float(r.get("avg")) or 0
-        gekwalificeerd = ab >= MIN_AB
-        return (not gekwalificeerd, -avg, -ab)
+        return (not ab >= MIN_AB, -avg, -ab)
     return sorted(rijen, key=key)
 
 
@@ -140,8 +209,7 @@ def sorteer_pitching(rijen: list) -> list:
         ip = naar_float(r.get("ip")) or 0
         era = naar_float(r.get("era"))
         era = era if era is not None else 999.0
-        gekwalificeerd = ip >= MIN_IP
-        return (not gekwalificeerd, era, -ip)
+        return (not ip >= MIN_IP, era, -ip)
     return sorted(rijen, key=key)
 
 
@@ -149,8 +217,7 @@ def sorteer_fielding(rijen: list) -> list:
     def key(r):
         c = naar_float(r.get("field_c")) or 0
         fldp = naar_float(r.get("fldp")) or 0
-        gekwalificeerd = c >= MIN_C
-        return (not gekwalificeerd, -fldp, -c)
+        return (not c >= MIN_C, -fldp, -c)
     return sorted(rijen, key=key)
 
 
@@ -160,40 +227,62 @@ SORTEERDERS = {
     "fielding": sorteer_fielding,
 }
 
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
 def main() -> int:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    sessie = requests.Session()
 
     stats = {}
     fouten = []
+    geblokkeerd = False
 
+    # --- Poging 1: requests ------------------------------------------------
+    sessie = requests.Session()
     for sectie in SECTIES:
         try:
-            print(f"→ Ophalen: {sectie} …", flush=True)
-            resultaat = haal_sectie(sessie, sectie)
-            resultaat["data"] = SORTEERDERS[sectie](resultaat["data"])
-            stats[sectie] = resultaat
-            print(f"  ✓ {len(resultaat['data'])} spelers, {len(resultaat['headers'])} kolommen")
+            print(f"→ Ophalen (requests): {sectie} …", flush=True)
+            stats[sectie] = haal_via_requests(sessie, sectie)
+            print(f"  ✓ {len(stats[sectie]['data'])} spelers")
+        except requests.HTTPError as e:
+            code = e.response.status_code if e.response is not None else "?"
+            print(f"  ✗ HTTP {code} bij {sectie}", file=sys.stderr)
+            if code in (403, 429, 503):
+                geblokkeerd = True
+                break  # geen zin de andere secties ook te proberen
+            fouten.append(f"{sectie}: {e}")
         except Exception as e:  # noqa: BLE001
             fouten.append(f"{sectie}: {e}")
             print(f"  ✗ Fout bij {sectie}: {e}", file=sys.stderr)
 
-    if len(fouten) == len(SECTIES):
-        print("Alle secties mislukt — bestaande data blijft ongewijzigd.", file=sys.stderr)
+    # --- Poging 2: Playwright-fallback -------------------------------------
+    if geblokkeerd or len(stats) < len(SECTIES):
+        print("→ Fallback naar Playwright (browsercontext)…", flush=True)
+        try:
+            stats = haal_alles_via_playwright()
+            fouten = []
+        except Exception as e:  # noqa: BLE001
+            fouten.append(f"playwright: {e}")
+            print(f"  ✗ Playwright-fallback mislukt: {e}", file=sys.stderr)
+
+    if not stats:
+        print("Alle strategieën mislukt — bestaande data blijft ongewijzigd.", file=sys.stderr)
         return 1
 
-    # Bij een deels mislukte run: vul aan vanuit bestaande stats.json zodat
-    # de widget nooit een lege sectie krijgt.
+    # Sorteren
+    for sectie, resultaat in stats.items():
+        resultaat["data"] = SORTEERDERS[sectie](resultaat["data"])
+
+    # Ontbrekende secties aanvullen vanuit bestaande stats.json (failsafe)
     stats_pad = OUTPUT_DIR / "stats.json"
-    if fouten and stats_pad.exists():
+    ontbrekend = [s for s in SECTIES if s not in stats]
+    if ontbrekend and stats_pad.exists():
         try:
             oud = json.loads(stats_pad.read_text(encoding="utf-8"))
-            for sectie in SECTIES:
-                if sectie not in stats and sectie in oud:
+            for sectie in ontbrekend:
+                if sectie in oud:
                     stats[sectie] = oud[sectie]
                     print(f"  ↺ {sectie}: oude data hergebruikt")
         except Exception:
@@ -205,13 +294,12 @@ def main() -> int:
         "last_updated": nu,
         "event": EVENT,
         "round": ROUND,
-        "source": f"https://stats.baseball.cz/en/events/{EVENT}/stats",
+        "source": STATS_PAGE,
         "counts": {s: len(stats.get(s, {}).get("data", [])) for s in SECTIES},
         "errors": fouten,
     }
 
-    # splits.json is (nog) een placeholder; de PHP laadt het bestand wel,
-    # dus het moet bestaan en geldige JSON bevatten.
+    # splits.json is (nog) een placeholder; de PHP laadt het bestand wel.
     splits = {}
 
     (OUTPUT_DIR / "stats.json").write_text(
