@@ -1,159 +1,232 @@
+#!/usr/bin/env python3
 """
-Czech Extraliga Stats Scraper — API versie
-Resultaten worden opgeslagen in /data als JSON.
+Czech Extraliga stats scraper
+=============================
+Haalt individuele spelersstatistieken (batting/pitching/fielding) op via de
+JSON-API van stats.baseball.cz en schrijft ze weg als:
+
+    data/stats.json   → { batting: {data, headers}, pitching: {...}, fielding: {...} }
+    data/splits.json  → {} (placeholder, PHP laadt dit bestand wel)
+    data/meta.json    → { last_updated, event, round, counts }
+
+Dit formaat sluit 1-op-1 aan op de [extraliga_stats] WordPress-shortcode.
+
+Let op: de URL wordt opgebouwd via een params-dict, dus GEEN dubbele
+team=/round=/split= parameters (de bug die eerder in de request-URL's zat).
 """
 
 import json
-import os
 import re
-import time
-import urllib.request
+import sys
 from datetime import datetime, timezone
+from pathlib import Path
 
-BASE = "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026"
-DATA = "data"
-os.makedirs(DATA, exist_ok=True)
+import requests
 
-HEADERS = {
-    "Accept":     "application/json",
-    "Referer":    "https://stats.baseball.cz/en/events/extraliga-2026/stats",
-    "User-Agent": "Mozilla/5.0 (compatible; ExtraligaBot/2.0)",
+# ---------------------------------------------------------------------------
+# Configuratie
+# ---------------------------------------------------------------------------
+
+EVENT      = "extraliga-2026"
+ROUND      = "6792"          # ronde-id uit de request-URL's
+LANGUAGE   = "en"
+BASE_URL   = f"https://stats.baseball.cz/api/v1/stats/events/{EVENT}/index"
+OUTPUT_DIR = Path(__file__).parent / "data"
+
+SECTIES = ["batting", "pitching", "fielding"]
+
+# Kwalificatiedrempels voor de "Top 10" sortering (overzicht-tab in de PHP).
+# Gekwalificeerde spelers komen bovenaan, de rest daaronder.
+MIN_AB = 40    # batting: minimaal aantal at-bats
+MIN_IP = 15.0  # pitching: minimaal aantal innings pitched
+MIN_C  = 20    # fielding: minimaal aantal chances
+
+HEADERS_HTTP = {
+    "User-Agent": "Mozilla/5.0 (compatible; ExtraligaStatsBot/1.0; +https://worldbaseballnews.org)",
+    "Accept": "application/json",
+    "Referer": f"https://stats.baseball.cz/en/events/{EVENT}/stats",
 }
 
-TEAMS = {
-    "Hroši":    "43158",
-    "Kotlářka": "43154",
-    "Draci":    "43156",
-    "Hluboká":  "43155",
-    "Nuclears": "43153",
-    "Eagles":   "43159",
-    "Arrows":   "43160",
-    "SaBaT":    "43157",
-}
+TIMEOUT = 30
 
-STAT_SECTIONS = ["batting", "pitching", "fielding"]
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
 
-
-def clean_name(html: str) -> str:
-    text = re.sub(r"<[^>]+>", " ", html)
-    return " ".join(text.split()).strip()
+_NAAM_RE = re.compile(
+    r'<span class="lastname">(?P<last>.*?)</span>\s*(?:<br\s*/?>)?\s*'
+    r'<span class="firstname">(?P<first>.*?)</span>',
+    re.IGNORECASE | re.DOTALL,
+)
 
 
-def fetch(url: str) -> dict | None:
-    for attempt in range(3):
-        try:
-            req = urllib.request.Request(url, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=20) as resp:
-                return json.loads(resp.read().decode("utf-8"))
-        except Exception as e:
-            print(f"  ⚠ Poging {attempt + 1} mislukt: {e}")
-            time.sleep(2 ** attempt)
-    return None
+def schoon_naam(raw: str) -> str:
+    """
+    Zet '<span class="lastname">ALVAREZ</span><br><span class="firstname">Roberto</span>'
+    om naar 'Roberto Alvarez'. Valt terug op het strippen van alle HTML.
+    """
+    if not raw:
+        return ""
+    m = _NAAM_RE.search(raw)
+    if m:
+        last = m.group("last").strip()
+        first = m.group("first").strip()
+        # Achternaam komt in CAPS binnen → nette titlecase (werkt ook met č/ř/á etc.)
+        last = " ".join(w.capitalize() if w.isupper() else w for w in last.split())
+        first = " ".join(w.capitalize() if w.islower() or w.isupper() else w for w in first.split())
+        return f"{first} {last}".strip()
+    # Fallback: strip alle tags
+    txt = re.sub(r"<br\s*/?>", " ", raw)
+    txt = re.sub(r"<[^>]+>", "", txt)
+    return " ".join(txt.split())
 
 
-def clean_players(data: list) -> list:
-    out = []
-    for row in data:
-        row = dict(row)
-        row["name"] = clean_name(row.get("name", ""))
-        m = re.search(r"/players/(\d+)$", row.get("link", ""))
-        row["player_id"] = m.group(1) if m else None
-        out.append(row)
-    return out
-
-
-def annotate_headers(headers: list) -> list:
-    for h in headers:
-        if h.get("format"):
-            h["format_type"] = "baseball_pct"
-    return headers
-
-
-def scrape_section(section: str, team: str = "") -> dict | None:
-    url = (
-        f"{BASE}/index"
-        f"?section=players"
-        f"&stats-section={section}"
-        f"&team={team}"
-        f"&round="
-        f"&split="
-        f"&language=en"
-    )
-    result = fetch(url)
-    if not result:
+def naar_float(val):
+    """Zet '3.00', '15.2' (IP), 982 etc. veilig om naar float; None bij mislukking."""
+    if val is None or val == "":
         return None
-    return {
-        "data":    clean_players(result.get("data", [])),
-        "headers": annotate_headers(result.get("headers", [])),
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return None
+
+
+def haal_sectie(sessie: requests.Session, sectie: str) -> dict:
+    """
+    Haalt één stats-sectie op. Params via dict → gegarandeerd geen duplicaten.
+    Retourneert {"data": [...], "headers": [...]}.
+    """
+    params = {
+        "section": "players",
+        "stats-section": sectie,
+        "team": "",
+        "round": ROUND,
+        "language": LANGUAGE,
     }
+    # 'split' hoort alleen bij batting/pitching (fielding-URL heeft die param niet)
+    if sectie in ("batting", "pitching"):
+        params["split"] = ""
+
+    resp = sessie.get(BASE_URL, params=params, headers=HEADERS_HTTP, timeout=TIMEOUT)
+    resp.raise_for_status()
+    payload = resp.json()
+
+    data = payload.get("data") or []
+    headers = payload.get("headers") or []
+
+    # Namen opschonen zodat de PHP ze direct kan tonen
+    for rij in data:
+        if "name" in rij:
+            rij["name"] = schoon_naam(str(rij["name"]))
+
+    return {"data": data, "headers": headers}
 
 
-def scrape_all_stats():
-    print("📊 Scraping stats (alle secties)…")
-    all_stats = {}
-    for section in STAT_SECTIONS:
-        print(f"  ↳ {section}…")
-        result = scrape_section(section)
-        if result:
-            all_stats[section] = result
-            print(f"     {len(result['data'])} spelers")
-        time.sleep(0.5)
-    with open(f"{DATA}/stats.json", "w", encoding="utf-8") as f:
-        json.dump(all_stats, f, ensure_ascii=False, indent=2)
-    print(f"  ✅ stats.json ({sum(len(v['data']) for v in all_stats.values())} rijen)")
-    return all_stats
+# ---------------------------------------------------------------------------
+# Sortering voor de "Top 10" op de overzicht-tab
+# ---------------------------------------------------------------------------
+
+def sorteer_batting(rijen: list) -> list:
+    def key(r):
+        ab = naar_float(r.get("ab")) or 0
+        avg = naar_float(r.get("avg")) or 0
+        gekwalificeerd = ab >= MIN_AB
+        return (not gekwalificeerd, -avg, -ab)
+    return sorted(rijen, key=key)
 
 
-def scrape_per_team():
-    print("👕 Scraping per team…")
-    os.makedirs(f"{DATA}/teams", exist_ok=True)
-    team_index = []
-    for name, team_id in TEAMS.items():
-        safe = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
-        team_data = {"name": name, "id": team_id, "sections": {}}
-        for section in STAT_SECTIONS:
-            result = scrape_section(section, team=team_id)
-            if result:
-                team_data["sections"][section] = result
-            time.sleep(0.3)
-        path = f"{DATA}/teams/{safe}.json"
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(team_data, f, ensure_ascii=False, indent=2)
-        team_index.append({"name": name, "id": team_id, "file": f"teams/{safe}.json"})
-        print(f"  ✅ {name}")
-    with open(f"{DATA}/teams/index.json", "w", encoding="utf-8") as f:
-        json.dump(team_index, f, ensure_ascii=False, indent=2)
+def sorteer_pitching(rijen: list) -> list:
+    def key(r):
+        ip = naar_float(r.get("ip")) or 0
+        era = naar_float(r.get("era"))
+        era = era if era is not None else 999.0
+        gekwalificeerd = ip >= MIN_IP
+        return (not gekwalificeerd, era, -ip)
+    return sorted(rijen, key=key)
 
 
-def scrape_standings():
-    print("🏆 Scraping standings…")
-    result = fetch("https://stats.baseball.cz/api/v1/events/extraliga-2026/standings")
-    with open(f"{DATA}/standings.json", "w", encoding="utf-8") as f:
-        json.dump(result or {}, f, ensure_ascii=False, indent=2)
-    print("  ✅ standings.json" if result else "  ⚠ Standings niet beschikbaar")
+def sorteer_fielding(rijen: list) -> list:
+    def key(r):
+        c = naar_float(r.get("field_c")) or 0
+        fldp = naar_float(r.get("fldp")) or 0
+        gekwalificeerd = c >= MIN_C
+        return (not gekwalificeerd, -fldp, -c)
+    return sorted(rijen, key=key)
 
 
-def write_meta(stats: dict):
+SORTEERDERS = {
+    "batting": sorteer_batting,
+    "pitching": sorteer_pitching,
+    "fielding": sorteer_fielding,
+}
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main() -> int:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    sessie = requests.Session()
+
+    stats = {}
+    fouten = []
+
+    for sectie in SECTIES:
+        try:
+            print(f"→ Ophalen: {sectie} …", flush=True)
+            resultaat = haal_sectie(sessie, sectie)
+            resultaat["data"] = SORTEERDERS[sectie](resultaat["data"])
+            stats[sectie] = resultaat
+            print(f"  ✓ {len(resultaat['data'])} spelers, {len(resultaat['headers'])} kolommen")
+        except Exception as e:  # noqa: BLE001
+            fouten.append(f"{sectie}: {e}")
+            print(f"  ✗ Fout bij {sectie}: {e}", file=sys.stderr)
+
+    if len(fouten) == len(SECTIES):
+        print("Alle secties mislukt — bestaande data blijft ongewijzigd.", file=sys.stderr)
+        return 1
+
+    # Bij een deels mislukte run: vul aan vanuit bestaande stats.json zodat
+    # de widget nooit een lege sectie krijgt.
+    stats_pad = OUTPUT_DIR / "stats.json"
+    if fouten and stats_pad.exists():
+        try:
+            oud = json.loads(stats_pad.read_text(encoding="utf-8"))
+            for sectie in SECTIES:
+                if sectie not in stats and sectie in oud:
+                    stats[sectie] = oud[sectie]
+                    print(f"  ↺ {sectie}: oude data hergebruikt")
+        except Exception:
+            pass
+
+    nu = datetime.now(timezone.utc).isoformat()
+
     meta = {
-        "last_updated":  datetime.now(timezone.utc).isoformat(),
-        "source":        f"{BASE}/index",
-        "season":        "Extraliga 2026",
-        "player_counts": {s: len(v["data"]) for s, v in stats.items()},
-        "teams":         TEAMS,
+        "last_updated": nu,
+        "event": EVENT,
+        "round": ROUND,
+        "source": f"https://stats.baseball.cz/en/events/{EVENT}/stats",
+        "counts": {s: len(stats.get(s, {}).get("data", [])) for s in SECTIES},
+        "errors": fouten,
     }
-    with open(f"{DATA}/meta.json", "w", encoding="utf-8") as f:
-        json.dump(meta, f, ensure_ascii=False, indent=2)
-    print("  ✅ meta.json")
 
+    # splits.json is (nog) een placeholder; de PHP laadt het bestand wel,
+    # dus het moet bestaan en geldige JSON bevatten.
+    splits = {}
 
-def main():
-    print(f"\n🚀 Czech Extraliga Stats Scraper — {datetime.now(timezone.utc):%Y-%m-%d %H:%M UTC}\n")
-    stats = scrape_all_stats()
-    scrape_per_team()
-    scrape_standings()
-    write_meta(stats)
-    print("\n✅ Klaar! Alle data staat in /data/\n")
+    (OUTPUT_DIR / "stats.json").write_text(
+        json.dumps(stats, ensure_ascii=False, separators=(",", ":")), encoding="utf-8"
+    )
+    (OUTPUT_DIR / "splits.json").write_text(
+        json.dumps(splits, ensure_ascii=False), encoding="utf-8"
+    )
+    (OUTPUT_DIR / "meta.json").write_text(
+        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+    print(f"✓ Klaar. Bestanden weggeschreven naar {OUTPUT_DIR}/")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
