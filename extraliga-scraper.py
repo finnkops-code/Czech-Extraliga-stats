@@ -8,7 +8,6 @@ import os
 import re
 import time
 import urllib.request
-import urllib.parse
 from datetime import datetime, timezone
 
 BASE = "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026"
@@ -40,9 +39,7 @@ def clean_name(html: str) -> str:
     return " ".join(text.split()).strip()
 
 
-def fetch(url: str, params: dict = None) -> dict | None:
-    if params:
-        url = url + "?" + urllib.parse.urlencode(params)
+def fetch(url: str) -> dict | None:
     for attempt in range(3):
         try:
             req = urllib.request.Request(url, headers=HEADERS)
@@ -73,15 +70,16 @@ def annotate_headers(headers: list) -> list:
 
 
 def scrape_section(section: str, team: str = "") -> dict | None:
-    params = {
-        "section":       "players",
-        "stats-section": section,
-        "team":          team,
-        "round":         "",
-        "split":         "",
-        "language":      "en",
-    }
-    result = fetch(f"{BASE}/index", params)
+    url = (
+        f"{BASE}/index"
+        f"?section=players"
+        f"&stats-section={section}"
+        f"&team={team}"
+        f"&round="
+        f"&split="
+        f"&language=en"
+    )
+    result = fetch(url)
     if not result:
         return None
     return {
