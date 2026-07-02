@@ -1,23 +1,16 @@
 {
-  "last_updated": "2026-07-02T06:59:15.386346+00:00",
+  "last_updated": "2026-07-02T07:09:30.444286+00:00",
   "source": "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026/index",
   "season": "Extraliga 2026",
   "player_counts": {},
-  "api_params": {
-    "stat_sections": [
-      "batting",
-      "pitching",
-      "fielding"
-    ],
-    "teams": {
-      "Hroši": "43158",
-      "Kotlářka": "43154",
-      "Draci": "43156",
-      "Hluboká": "43155",
-      "Nuclears": "43153",
-      "Eagles": "43159",
-      "Arrows": "43160",
-      "SaBaT": "43157"
-    }
+  "teams": {
+    "Hroši": "43158",
+    "Kotlářka": "43154",
+    "Draci": "43156",
+    "Hluboká": "43155",
+    "Nuclears": "43153",
+    "Eagles": "43159",
+    "Arrows": "43160",
+    "SaBaT": "43157"
   }
 }
