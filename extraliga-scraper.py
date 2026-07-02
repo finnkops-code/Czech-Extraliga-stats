@@ -1,29 +1,26 @@
 """
-Czech Extraliga Stats Scraper
-Gebruikt de exacte API endpoints zoals opgegeven.
+Czech Extraliga Stats Scraper — API versie
+Roept de JSON API rechtstreeks aan, geen browser nodig.
+Resultaten worden opgeslagen in /data als JSON.
 """
 
 import json
 import os
 import re
 import time
-from datetime import datetime, timezone
 import urllib.request
+import urllib.parse
+from datetime import datetime, timezone
 
+BASE = "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026"
+ROUND = "6792"  # Základní část
 DATA = "data"
 os.makedirs(DATA, exist_ok=True)
 
-HEADERS_REQ = {
-    "Accept":     "application/json",
-    "Referer":    "https://stats.baseball.cz/en/events/extraliga-2026/stats",
+HEADERS = {
+    "Accept": "application/json",
+    "Referer": "https://stats.baseball.cz/en/events/extraliga-2026/stats",
     "User-Agent": "Mozilla/5.0 (compatible; ExtraligaBot/2.0)",
-}
-
-# Exacte URLs zoals opgegeven — stats-section staat in de URL zelf hardcoded
-ENDPOINTS = {
-    "batting":  "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026/index?section=players&stats-section=batting&team=&round=6792&split=&team=&round=6792&split=&language=en",
-    "pitching": "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026/index?section=players&stats-section=pitching&team=&round=6792&split=&team=&round=6792&split=&language=en",
-    "fielding": "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026/index?section=players&stats-section=fielding&team=&round=6792&team=&round=6792&language=en",
 }
 
 TEAMS = {
@@ -41,26 +38,28 @@ STAT_SECTIONS = ["batting", "pitching", "fielding"]
 
 
 def clean_name(html: str) -> str:
-    last  = re.search(r'class="lastname"[^>]*>(.*?)</span>',  html)
-    first = re.search(r'class="firstname"[^>]*>(.*?)</span>', html)
-    if last and first:
-        return f"{last.group(1)} {first.group(1)}"
-    return " ".join(re.sub(r"<[^>]+>", " ", html).split()).strip()
+    """Verwijder HTML-tags uit naam-veld."""
+    text = re.sub(r"<[^>]+>", " ", html)
+    return " ".join(text.split()).strip()
 
 
-def fetch(url: str) -> dict | None:
+def fetch(url: str, params: dict = None) -> dict | None:
+    """Doe een GET-verzoek met retry."""
+    if params:
+        url = url + "?" + urllib.parse.urlencode(params)
     for attempt in range(3):
         try:
-            req = urllib.request.Request(url, headers=HEADERS_REQ)
+            req = urllib.request.Request(url, headers=HEADERS)
             with urllib.request.urlopen(req, timeout=20) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except Exception as e:
-            print(f"  ⚠ Poging {attempt+1} mislukt: {e}")
+            print(f"  ⚠ Poging {attempt + 1} mislukt ({url}): {e}")
             time.sleep(2 ** attempt)
     return None
 
 
 def clean_players(data: list) -> list:
+    """Maak namen leesbaar en voeg een 'player_id' veld toe."""
     out = []
     for row in data:
         row = dict(row)
@@ -73,35 +72,57 @@ def clean_players(data: list) -> list:
 
 
 def annotate_headers(headers: list) -> list:
+    """
+    Voeg format_type toe aan headers zodat de display-laag weet hoe te formatteren.
+    Percentage-velden (AVG, OBP, SLG, FLDP, etc.) komen als integer uit de API:
+    bijv. 333 = .333 | 1050 = 1.050
+    """
     for h in headers:
         if h.get("format"):
             h["format_type"] = "baseball_pct"
     return headers
 
 
+def scrape_section(section: str, team: str = "", round_: str = ROUND) -> dict | None:
+    """Haal één stats-sectie op."""
+    params = {
+        "section":       "players",
+        "stats-section": section,
+        "team":          team,
+        "round":         round_,
+        "split":         "",
+        "language":      "en",
+    }
+    result = fetch(f"{BASE}/index", params)
+    if not result:
+        return None
+    return {
+        "data":    clean_players(result.get("data", [])),
+        "headers": annotate_headers(result.get("headers", [])),
+    }
+
+
 def scrape_all_stats():
+    """Scrape batting/pitching/fielding voor alle spelers."""
     print("📊 Scraping stats (alle secties)…")
     all_stats = {}
 
-    for section, url in ENDPOINTS.items():
+    for section in STAT_SECTIONS:
         print(f"  ↳ {section}…")
-        result = fetch(url)
+        result = scrape_section(section)
         if result:
-            data = {
-                "data":    clean_players(result.get("data", [])),
-                "headers": annotate_headers(result.get("headers", [])),
-            }
-            all_stats[section] = data
-            print(f"     {len(data['data'])} spelers")
+            all_stats[section] = result
+            print(f"     {len(result['data'])} spelers")
         time.sleep(0.5)
 
     with open(f"{DATA}/stats.json", "w", encoding="utf-8") as f:
         json.dump(all_stats, f, ensure_ascii=False, indent=2)
-    print(f"  ✅ stats.json")
+    print(f"  ✅ stats.json ({sum(len(v['data']) for v in all_stats.values())} rijen)")
     return all_stats
 
 
 def scrape_per_team():
+    """Scrape alle stats per team apart."""
     print("👕 Scraping per team…")
     os.makedirs(f"{DATA}/teams", exist_ok=True)
     team_index = []
@@ -110,15 +131,10 @@ def scrape_per_team():
         safe = re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
         team_data = {"name": name, "id": team_id, "sections": {}}
 
-        for section, base_url in ENDPOINTS.items():
-            # Vervang team= door het juiste team_id
-            url = re.sub(r'team=(?=&|$)', f'team={team_id}', base_url, count=1)
-            result = fetch(url)
+        for section in STAT_SECTIONS:
+            result = scrape_section(section, team=team_id)
             if result:
-                team_data["sections"][section] = {
-                    "data":    clean_players(result.get("data", [])),
-                    "headers": annotate_headers(result.get("headers", [])),
-                }
+                team_data["sections"][section] = result
             time.sleep(0.3)
 
         path = f"{DATA}/teams/{safe}.json"
@@ -131,13 +147,32 @@ def scrape_per_team():
         json.dump(team_index, f, ensure_ascii=False, indent=2)
 
 
+def scrape_standings():
+    """Haal de stand op via de API."""
+    print("🏆 Scraping standings…")
+    url = "https://stats.baseball.cz/api/v1/events/extraliga-2026/standings"
+    result = fetch(url)
+    if result:
+        with open(f"{DATA}/standings.json", "w", encoding="utf-8") as f:
+            json.dump(result, f, ensure_ascii=False, indent=2)
+        print("  ✅ standings.json")
+    else:
+        print("  ⚠ Standings niet beschikbaar via API")
+        with open(f"{DATA}/standings.json", "w") as f:
+            json.dump({}, f)
+
+
 def write_meta(stats: dict):
     meta = {
         "last_updated":  datetime.now(timezone.utc).isoformat(),
-        "source":        "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026/index",
+        "source":        f"{BASE}/index",
         "season":        "Extraliga 2026",
+        "round":         ROUND,
         "player_counts": {s: len(v["data"]) for s, v in stats.items()},
-        "teams":         TEAMS,
+        "api_params": {
+            "stat_sections": STAT_SECTIONS,
+            "teams":         TEAMS,
+        },
     }
     with open(f"{DATA}/meta.json", "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
@@ -148,8 +183,9 @@ def main():
     print(f"\n🚀 Czech Extraliga Stats Scraper — {datetime.now(timezone.utc):%Y-%m-%d %H:%M UTC}\n")
     stats = scrape_all_stats()
     scrape_per_team()
+    scrape_standings()
     write_meta(stats)
-    print("\n✅ Klaar!\n")
+    print("\n✅ Klaar! Alle data staat in /data/\n")
 
 
 if __name__ == "__main__":
