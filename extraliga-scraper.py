@@ -13,13 +13,12 @@ import urllib.parse
 from datetime import datetime, timezone
 
 BASE = "https://stats.baseball.cz/api/v1/stats/events/extraliga-2026"
-ROUND = "6792"  # Základní část
 DATA = "data"
 os.makedirs(DATA, exist_ok=True)
 
 HEADERS = {
-    "Accept": "application/json",
-    "Referer": "https://stats.baseball.cz/en/events/extraliga-2026/stats",
+    "Accept":     "application/json",
+    "Referer":    "https://stats.baseball.cz/en/events/extraliga-2026/stats",
     "User-Agent": "Mozilla/5.0 (compatible; ExtraligaBot/2.0)",
 }
 
@@ -75,7 +74,7 @@ def annotate_headers(headers: list) -> list:
     """
     Voeg format_type toe aan headers zodat de display-laag weet hoe te formatteren.
     Percentage-velden (AVG, OBP, SLG, FLDP, etc.) komen als integer uit de API:
-    bijv. 333 = .333 | 1050 = 1.050
+    bijv. 333 = .333 | 1050 = 1.050 (OPS kan > 1 zijn)
     """
     for h in headers:
         if h.get("format"):
@@ -83,14 +82,12 @@ def annotate_headers(headers: list) -> list:
     return headers
 
 
-def scrape_section(section: str, team: str = "", round_: str = ROUND) -> dict | None:
+def scrape_section(section: str, team: str = "") -> dict | None:
     """Haal één stats-sectie op."""
     params = {
         "section":       "players",
         "stats-section": section,
         "team":          team,
-        "round":         round_,
-        "split":         "",
         "language":      "en",
     }
     result = fetch(f"{BASE}/index", params)
@@ -167,7 +164,6 @@ def write_meta(stats: dict):
         "last_updated":  datetime.now(timezone.utc).isoformat(),
         "source":        f"{BASE}/index",
         "season":        "Extraliga 2026",
-        "round":         ROUND,
         "player_counts": {s: len(v["data"]) for s, v in stats.items()},
         "api_params": {
             "stat_sections": STAT_SECTIONS,
