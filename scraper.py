@@ -57,6 +57,24 @@ BROWSER_HEADERS = {
     "Sec-Fetch-Site": "same-origin",
 }
 TIMEOUT = 30
+# Verbergt de meest voorkomende automation-fingerprints van headless Chromium
+# (navigator.webdriver, ontbrekende plugins/languages, ontbrekend window.chrome).
+# Dit alleen is geen garantie tegen geavanceerde bot-detectie, maar haalt wel
+# de "makkelijke" signalen weg waar veel WAF's/anti-bot-systemen op filteren.
+STEALTH_INIT_SCRIPT = """
+Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+Object.defineProperty(navigator, 'languages', { get: () => ['en-US', 'en'] });
+Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
+window.chrome = { runtime: {} };
+const origQuery = window.navigator.permissions && window.navigator.permissions.query;
+if (origQuery) {
+    window.navigator.permissions.query = (params) => (
+        params.name === 'notifications'
+            ? Promise.resolve({ state: Notification.permission })
+            : origQuery(params)
+    );
+}
+"""
 # ---------------------------------------------------------------------------
 # URL-opbouw (schoon, zonder duplicaten)
 # ---------------------------------------------------------------------------
@@ -122,31 +140,14 @@ def haal_via_requests(sessie: requests.Session, sectie: str) -> dict:
 # ---------------------------------------------------------------------------
 # Strategie 2: Playwright-fallback (fetch vanuit de browsercontext)
 # ---------------------------------------------------------------------------
-def haal_alles_via_playwright() -> dict:
-    """
-    Laadt de stats-pagina in headless Chromium en haalt daarna alle secties
-    op via window.fetch binnen de pagina. Retourneert {sectie: {data, headers}}.
-    """
-    from playwright.sync_api import sync_playwright
-    resultaat = {}
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=["--disable-blink-features=AutomationControlled"],
-        )
-        context = browser.new_context(
-            user_agent=BROWSER_HEADERS["User-Agent"],
-            locale="en-US",
-            viewport={"width": 1366, "height": 900},
-        )
-        page = context.new_page()
-        print("  Playwright: stats-pagina laden (JS-challenge)…", flush=True)
-        page.goto(STATS_PAGE, wait_until="domcontentloaded", timeout=60_000)
-        # Even wachten zodat een eventuele challenge/cookies kan afronden
-        page.wait_for_timeout(4_000)
-        for sectie in SECTIES:
-            url = bouw_url(sectie)
-            print(f"  Playwright fetch: {sectie} …", flush=True)
+def _fetch_sectie_met_retries(page, sectie: str, pogingen: int = 3):
+    """Haalt één sectie op via window.fetch, met een paar herhaalpogingen
+    (met oplopende wachttijd) voordat we het opgeven — transiënte 403's van
+    WAF's lossen zich soms na een paar seconden vanzelf op."""
+    laatste_fout = None
+    for poging in range(1, pogingen + 1):
+        url = bouw_url(sectie)
+        try:
             payload = page.evaluate(
                 """async (url) => {
                     const r = await fetch(url, {
@@ -159,10 +160,65 @@ def haal_alles_via_playwright() -> dict:
                 }""",
                 url,
             )
-            resultaat[sectie] = verwerk_payload(payload)
-            print(f"  ✓ {sectie}: {len(resultaat[sectie]['data'])} spelers")
-        browser.close()
-    return resultaat
+            return verwerk_payload(payload)
+        except Exception as e:  # noqa: BLE001
+            laatste_fout = e
+            print(f"    ✗ poging {poging}/{pogingen} voor {sectie} mislukt: {e}", file=sys.stderr)
+            if poging < pogingen:
+                page.wait_for_timeout(3_000 * poging)
+    raise laatste_fout
+def haal_alles_via_playwright() -> dict:
+    """
+    Laadt de stats-pagina in headless Chromium en haalt daarna alle secties
+    op via window.fetch binnen de pagina. Retourneert {sectie: {data, headers}}.
+    Probeert de hele operatie (paginalading + fetches) tot 2 keer met een
+    verse browser-context, met wat stealth-maatregelen tegen headless-detectie.
+    """
+    from playwright.sync_api import sync_playwright
+    max_pogingen = 2
+    laatste_fout = None
+    for poging in range(1, max_pogingen + 1):
+        try:
+            with sync_playwright() as p:
+                browser = p.chromium.launch(
+                    headless=True,
+                    args=[
+                        "--disable-blink-features=AutomationControlled",
+                        "--disable-features=IsolateOrigins,site-per-process",
+                    ],
+                )
+                context = browser.new_context(
+                    user_agent=BROWSER_HEADERS["User-Agent"],
+                    locale="en-US",
+                    viewport={"width": 1366, "height": 900},
+                    extra_http_headers={"Accept-Language": "en-US,en;q=0.9"},
+                )
+                context.add_init_script(STEALTH_INIT_SCRIPT)
+                page = context.new_page()
+                print(f"  Playwright (poging {poging}/{max_pogingen}): stats-pagina laden…", flush=True)
+                resp = page.goto(STATS_PAGE, wait_until="domcontentloaded", timeout=60_000)
+                status = resp.status if resp else None
+                print(f"  → paginastatus: {status}", flush=True)
+                if status and status >= 400:
+                    fragment = page.content()[:300].replace("\n", " ")
+                    print(f"  ⚠ Pagina gaf status {status}. Fragment: {fragment}", file=sys.stderr)
+                # Wachten zodat een eventuele JS-challenge/cookies kan afronden
+                page.wait_for_timeout(6_000)
+                resultaat = {}
+                for sectie in SECTIES:
+                    print(f"  Playwright fetch: {sectie} …", flush=True)
+                    resultaat[sectie] = _fetch_sectie_met_retries(page, sectie)
+                    print(f"  ✓ {sectie}: {len(resultaat[sectie]['data'])} spelers")
+                browser.close()
+                return resultaat
+        except Exception as e:  # noqa: BLE001
+            laatste_fout = e
+            print(f"  ✗ Playwright-poging {poging}/{max_pogingen} volledig mislukt: {e}", file=sys.stderr)
+            if poging < max_pogingen:
+                print("  → nieuwe poging over 10s met verse browser-context…", flush=True)
+                import time
+                time.sleep(10)
+    raise laatste_fout
 # ---------------------------------------------------------------------------
 # Sortering voor de "Top 10" op de overzicht-tab
 # ---------------------------------------------------------------------------
