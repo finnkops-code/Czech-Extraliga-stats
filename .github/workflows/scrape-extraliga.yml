@@ -26,16 +26,23 @@ jobs:
           playwright install --with-deps chromium
       - name: Draai scraper
         run: python scraper.py
-      - name: Commit & push bij wijzigingen
+      - name: Commit & push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/stats.json data/splits.json data/meta.json
-          # Alleen committen als stats.json of splits.json inhoudelijk wijzigde
-          # (meta.json verandert elke run door de timestamp)
-          if git diff --cached --quiet -- data/stats.json data/splits.json; then
-            echo "Geen inhoudelijke wijzigingen — geen commit."
+          # meta.json bevat altijd een nieuwe "last_checked"-timestamp, dus er is
+          # elke run wel iets om te committen — zo blijft zichtbaar (in de
+          # commit-historie én op de site) wanneer de scraper voor het laatst
+          # succesvol heeft gedraaid, ook als er geen nieuwe spelersdata is.
+          if git diff --cached --quiet; then
+            echo "Niets om te committen (zou niet moeten gebeuren, meta.json wijzigt altijd)."
           else
-            git commit -m "Update Extraliga stats ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            if git diff --cached --quiet -- data/stats.json data/splits.json; then
+              MSG="Check Extraliga stats – geen nieuwe data ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            else
+              MSG="Update Extraliga stats ($(date -u +'%Y-%m-%d %H:%M UTC'))"
+            fi
+            git commit -m "$MSG"
             git push
           fi
