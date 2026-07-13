@@ -25,6 +25,12 @@ jobs:
           pip install requests playwright
           playwright install --with-deps chromium
       - name: Draai scraper
+        env:
+          # Optioneel: voeg een repo-secret PROXY_URL toe (Settings → Secrets
+          # and variables → Actions) met bv. http://user:pass@proxy-host:poort
+          # van een residential-proxy-dienst. stats.baseball.cz blokkeert
+          # GitHub-runner-IP's op WAF-niveau; zonder proxy blijft dat zo.
+          PROXY_URL: ${{ secrets.PROXY_URL }}
         run: python scraper.py
       - name: Commit & push
         run: |
