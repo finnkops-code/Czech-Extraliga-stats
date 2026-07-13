@@ -345,15 +345,20 @@ def main() -> int:
         nieuw_vergelijk = {s: stats.get(s, {}).get("data") for s in SECTIES}
         oud_vergelijk = {s: oude_stats.get(s, {}).get("data") for s in SECTIES}
         data_gewijzigd = nieuw_vergelijk != oud_vergelijk
-    # "last_updated" wordt bewust ELKE run bijgewerkt (ook zonder inhoudelijke
-    # wijziging) — dit veld voedt de "Bijgewerkt"-datum op de site, en die
-    # moet voor SEO-doeleinden dagelijks verschuiven. "data_changed_this_run"
-    # blijft beschikbaar als intern diagnoseveld om te zien of er die dag ook
-    # daadwerkelijk nieuwe spelersdata binnenkwam.
+    # Oude meta.json inlezen zodat "last_updated" behouden blijft als er
+    # niets is veranderd.
+    meta_pad = OUTPUT_DIR / "meta.json"
+    oude_last_updated = None
+    if meta_pad.exists():
+        try:
+            oude_meta = json.loads(meta_pad.read_text(encoding="utf-8"))
+            oude_last_updated = oude_meta.get("last_updated")
+        except Exception:
+            pass
     nu = datetime.now(timezone.utc).isoformat()
     meta = {
         "last_checked": nu,
-        "last_updated": nu,
+        "last_updated": nu if (data_gewijzigd or not oude_last_updated) else oude_last_updated,
         "data_changed_this_run": data_gewijzigd,
         "event": EVENT,
         "round": ROUND,
