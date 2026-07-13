@@ -22,12 +22,28 @@ inhoudelijk anders is dan de vorige run. Zo kun je op de site onderscheid
 maken tussen "gecontroleerd, geen nieuwe data" en "daadwerkelijk bijgewerkt".
 """
 import json
+import os
 import re
 import sys
 import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 import requests
+# ---------------------------------------------------------------------------
+# Proxy (optioneel)
+# ---------------------------------------------------------------------------
+# stats.baseball.cz blokkeert GitHub Actions-runners op WAF/CDN-niveau (een
+# AWS CloudFront 403 "The request could not be satisfied", die al optreedt
+# vóórdat er ook maar JavaScript draait) — dat is een IP-reputatie-blokkade,
+# geen headless-browser-detectie. Headers, stealth-scripts of retries lossen
+# dat niet op. De enige echte oplossing is de requests via een IP routeren
+# dat niet als datacenter/cloud-IP bekend staat, bijvoorbeeld via een
+# residential-proxy-dienst (ScraperAPI, Bright Data, ZenRows, etc.).
+#
+# Zet de GitHub Actions secret PROXY_URL (bijv. http://user:pass@proxy-host:poort)
+# om dit te activeren — zonder die secret verandert er niets aan het gedrag.
+PROXY_URL = os.environ.get("PROXY_URL", "").strip() or None
+REQUEST_PROXIES = {"http": PROXY_URL, "https": PROXY_URL} if PROXY_URL else None
 # ---------------------------------------------------------------------------
 # Configuratie
 # ---------------------------------------------------------------------------
@@ -134,12 +150,28 @@ def verwerk_payload(payload: dict) -> dict:
 # Strategie 1: requests met browser-headers
 # ---------------------------------------------------------------------------
 def haal_via_requests(sessie: requests.Session, sectie: str) -> dict:
-    resp = sessie.get(bouw_url(sectie), headers=BROWSER_HEADERS, timeout=TIMEOUT)
+    resp = sessie.get(
+        bouw_url(sectie), headers=BROWSER_HEADERS, timeout=TIMEOUT, proxies=REQUEST_PROXIES
+    )
     resp.raise_for_status()
     return verwerk_payload(resp.json())
 # ---------------------------------------------------------------------------
 # Strategie 2: Playwright-fallback (fetch vanuit de browsercontext)
 # ---------------------------------------------------------------------------
+def _playwright_proxy_config():
+    """Zet PROXY_URL (bv. http://user:pass@host:poort) om naar het dict-formaat
+    dat Playwright's chromium.launch(proxy=...) verwacht. Geeft None terug als
+    er geen PROXY_URL is ingesteld."""
+    if not PROXY_URL:
+        return None
+    parsed = urllib.parse.urlsplit(PROXY_URL)
+    server = f"{parsed.scheme}://{parsed.hostname}" + (f":{parsed.port}" if parsed.port else "")
+    config = {"server": server}
+    if parsed.username:
+        config["username"] = urllib.parse.unquote(parsed.username)
+    if parsed.password:
+        config["password"] = urllib.parse.unquote(parsed.password)
+    return config
 def _fetch_sectie_met_retries(page, sectie: str, pogingen: int = 3):
     """Haalt één sectie op via window.fetch, met een paar herhaalpogingen
     (met oplopende wachttijd) voordat we het opgeven — transiënte 403's van
@@ -180,12 +212,16 @@ def haal_alles_via_playwright() -> dict:
     for poging in range(1, max_pogingen + 1):
         try:
             with sync_playwright() as p:
+                proxy_config = _playwright_proxy_config()
+                if proxy_config:
+                    print(f"  → gebruik proxy: {proxy_config['server']}", flush=True)
                 browser = p.chromium.launch(
                     headless=True,
                     args=[
                         "--disable-blink-features=AutomationControlled",
                         "--disable-features=IsolateOrigins,site-per-process",
                     ],
+                    proxy=proxy_config,
                 )
                 context = browser.new_context(
                     user_agent=BROWSER_HEADERS["User-Agent"],
