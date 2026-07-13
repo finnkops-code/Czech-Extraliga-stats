@@ -1,40 +1,31 @@
 name: Update Extraliga stats
-
 on:
   schedule:
-    # Elke 3 uur tussen 06:00 en 23:00 UTC (wedstrijddagen + updates)
-    - cron: "0 6-23/3 * * *"
+    # Elke dag om 08:00 Nederlandse tijd (06:00 UTC, zomertijd)
+    - cron: "0 6 * * *"
   workflow_dispatch: {}   # handmatig starten via de Actions-tab
-
 permissions:
   contents: write
-
 concurrency:
   group: update-stats
   cancel-in-progress: false
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Installeer dependencies
         run: |
           pip install requests playwright
           playwright install --with-deps chromium
-
       - name: Draai scraper
         run: python scraper.py
-
       - name: Commit & push bij wijzigingen
         run: |
           git config user.name "github-actions[bot]"
